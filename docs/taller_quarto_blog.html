@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="taller_quarto_blog_files/libs/clipboard/clipboard.min.js"></script>
-<script src="taller_quarto_blog_files/libs/quarto-html/tabby.min.js"></script>
-<script src="taller_quarto_blog_files/libs/quarto-html/popper.min.js"></script>
-<script src="taller_quarto_blog_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="taller_quarto_blog_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="taller_quarto_blog_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="taller_quarto_blog_files/libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
   <title>Crea tu propia página web con Quarto y R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="taller_quarto_blog_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="taller_quarto_blog_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -97,11 +97,11 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="taller_quarto_blog_files/libs/revealjs/dist/theme/quarto-5ab285e773767a82ee4731d03291eab2.css">
-  <link href="taller_quarto_blog_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="taller_quarto_blog_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="taller_quarto_blog_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="taller_quarto_blog_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5ab285e773767a82ee4731d03291eab2.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -285,19 +285,19 @@
 <p>En RStudio:</p>
 <p><strong>File → New Project → New Directory → Quarto Blog</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="co"># Para previsualizar en vivo:</span></span>
-<span id="cb2-2"><a href=""></a>quarto<span class="sc">::</span><span class="fu">quarto_preview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Para previsualizar en vivo:</span></span>
+<span id="cb2-2"><a></a>quarto<span class="sc">::</span><span class="fu">quarto_preview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Quarto genera el sitio automáticamente cada vez que guardas un archivo.</p>
 </section>
 <section id="anatomía-de-una-entrada" class="slide level2">
 <h2>Anatomía de una entrada</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mi primer análisis en R"</span></span>
-<span id="cb3-3"><a href=""></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
-<span id="cb3-4"><a href=""></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-07-29"</span></span>
-<span id="cb3-5"><a href=""></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">R</span><span class="kw">,</span><span class="at"> análisis</span><span class="kw">,</span><span class="at"> datos</span><span class="kw">]</span></span>
-<span id="cb3-6"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="pp">---</span></span>
+<span id="cb3-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mi primer análisis en R"</span></span>
+<span id="cb3-3"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
+<span id="cb3-4"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-07-29"</span></span>
+<span id="cb3-5"><a></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">R</span><span class="kw">,</span><span class="at"> análisis</span><span class="kw">,</span><span class="at"> datos</span><span class="kw">]</span></span>
+<span id="cb3-6"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Luego texto en <strong>Markdown</strong> y bloques de código R que se ejecutan al renderizar.</p>
 </section>
 <section id="personalización" class="slide level2">
@@ -317,9 +317,9 @@
 <li>Sube tu proyecto: <code>git push</code></li>
 <li>En el YAML, agrega:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href=""></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href=""></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb4-3"><a href=""></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb4-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb4-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="4" type="1">
 <li>En GitHub → Settings → Pages → selecciona la rama y carpeta <code>docs</code></li>
 <li>¡Tu blog está en línea! 🎉</li>
@@ -336,6 +336,7 @@
 <p><strong>Grupo de usuari@s de R: Santiago de Chile</strong> <a href="https://santiagorusers.github.io/">santiagorusers.github.io</a></p>
 </div>
 
+
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -345,19 +346,19 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="taller_quarto_blog_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="taller_quarto_blog_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

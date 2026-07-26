@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "taller_quarto_blog.html#qué-haremos-hoy",
+    "href": "taller_quarto_blog.html#qué-haremos-hoy",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "¿Qué haremos hoy?",
+    "text": "¿Qué haremos hoy?\n\nCrear un blog desde cero con Quarto desde RStudio\nPersonalizar la apariencia del blog\nEscribir tu primera publicación\nAgregar código de R a tus publicaciones\nSubir el blog a un repositorio Github\nPublicarlo en la web con GitHub Pages"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#qué-es-quarto",
+    "href": "taller_quarto_blog.html#qué-es-quarto",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "¿Qué es Quarto?",
+    "text": "¿Qué es Quarto?\n\n\nQuarto es un sistema de publicación científica y técnica de código abierto que permite combinar:\n\nTexto en Markdown\nCódigo en R, Python, Julia…\nResultados, gráficos y tablas\n\n\nSoporta múltiples formatos de salida: HTML, PDF, presentaciones, blogs, libros y más."
+  },
+  {
+    "objectID": "taller_quarto_blog.html#por-qué-un-blog",
+    "href": "taller_quarto_blog.html#por-qué-un-blog",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "¿Por qué un blog?",
+    "text": "¿Por qué un blog?\nTu blog es tu espacio en la web para:\n\nVisibilizarte profesionalmente\nCompartir proyectos, análisis y aprendizajes\nConstruir tu portafolio con código real\nConectar con la comunidad de R y datos"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#ejemplos",
+    "href": "taller_quarto_blog.html#ejemplos",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Ejemplos",
+    "text": "Ejemplos\nAlgunos blog hechos con Quarto:\n\nsantiagorusers.github.io\nquarto.org\nnrennie.rbind.io\nalejandroromerog.github.io\nemilhvitfeldt.com\nbrodrigues.co\nkaraman.is\nandrewheiss.com\nellakaye.co.uk\nrainbowr.org"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#herramientas-que-usaremos",
+    "href": "taller_quarto_blog.html#herramientas-que-usaremos",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Herramientas que usaremos",
+    "text": "Herramientas que usaremos\n\n\nQuarto\nSistema de publicación para crear el blog\n\nRStudio\nIDE para escribir código y contenido\n\nGitHub\nRepositorio y plataforma de publicación"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#estructura-de-un-blog-en-quarto",
+    "href": "taller_quarto_blog.html#estructura-de-un-blog-en-quarto",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Estructura de un blog en Quarto",
+    "text": "Estructura de un blog en Quarto\nmi-blog/\n├── _quarto.yml      # configuración del sitio\n├── index.qmd        # página principal\n├── about.qmd        # sobre ti\n└── posts/\n    ├── primer-post/\n    │   └── index.qmd\n    └── segundo-post/\n        └── index.qmd\nCada entrada es un archivo .qmd dentro de posts/."
+  },
+  {
+    "objectID": "taller_quarto_blog.html#creando-el-blog",
+    "href": "taller_quarto_blog.html#creando-el-blog",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Creando el blog",
+    "text": "Creando el blog\nEn RStudio:\nFile → New Project → New Directory → Quarto Blog\n\n# Para previsualizar en vivo:\nquarto::quarto_preview()\n\nQuarto genera el sitio automáticamente cada vez que guardas un archivo."
+  },
+  {
+    "objectID": "taller_quarto_blog.html#anatomía-de-una-entrada",
+    "href": "taller_quarto_blog.html#anatomía-de-una-entrada",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Anatomía de una entrada",
+    "text": "Anatomía de una entrada\n---\ntitle: \"Mi primer análisis en R\"\nauthor: \"Tu nombre\"\ndate: \"2026-07-29\"\ncategories: [R, análisis, datos]\n---\nLuego texto en Markdown y bloques de código R que se ejecutan al renderizar."
+  },
+  {
+    "objectID": "taller_quarto_blog.html#personalización",
+    "href": "taller_quarto_blog.html#personalización",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Personalización",
+    "text": "Personalización\nEdita _quarto.yml para cambiar:\n\nTema visual → theme: cosmo (o cualquiera de Bootswatch)\nNombre y descripción del sitio\nBarra de navegación y links\nColores y fuentes con CSS personalizado"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#publicando-con-github-pages",
+    "href": "taller_quarto_blog.html#publicando-con-github-pages",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Publicando con GitHub Pages",
+    "text": "Publicando con GitHub Pages\n\nCrea un repositorio en GitHub\nSube tu proyecto: git push\nEn el YAML, agrega:\n\nproject:\n  type: website\n  output-dir: docs\n\nEn GitHub → Settings → Pages → selecciona la rama y carpeta docs\n¡Tu blog está en línea! 🎉"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#junta",
+    "href": "taller_quarto_blog.html#junta",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Junta",
+    "text": "Junta\n\nMuestra tus proyectos con R: gráficos, datos, modelos, mapas, apps!\nConoce lo que están haciendo otros miembros de la comunidad\nComparte, pregunta, conecta\n\n\nGrupo de usuari@s de R: Santiago de Chile santiagorusers.github.io"
+  }
+]
