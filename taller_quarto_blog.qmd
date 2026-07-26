@@ -1,0 +1,197 @@
+---
+title: "Crea tu propia página web con [Quarto]{.rosa} y [R]{.rosa}"
+subtitle: "Grupo de usuari@s de R, Santiago de Chile"
+title-slide-attributes:
+  data-background-image: arcoiris.png
+  data-background-size: "100% 17%"
+  data-background-position: top
+  data-background-repeat: no-repeat
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    transition: slide
+    highlight-style: "github-dark"
+    footer: "Grupo de usuari@s de R, Santiago de Chile"
+    link-external-newwindow: true
+execute:
+  echo: true
+  warning: false
+---
+
+## ¿Qué haremos hoy?
+
+::: {.incremental}
+- Crear un blog desde cero con **Quarto** desde **RStudio**
+- Personalizar la apariencia del blog
+- Escribir tu primera publicación
+- Agregar código de R a tus publicaciones
+- Subir el blog a un repositorio **Github**
+- Publicarlo en la web con **GitHub Pages**
+:::
+
+---
+
+## ¿Qué es Quarto?
+
+:::: {.columns}
+
+::: {.column}
+Quarto es un sistema de publicación científica y técnica de **código abierto** que permite combinar:
+
+- Texto en Markdown
+- Código en R, Python, Julia…
+- Resultados, gráficos y tablas
+:::
+
+::: {.column}
+
+Soporta múltiples formatos de salida: HTML, PDF, presentaciones, **blogs**, libros y más.
+:::
+
+::::
+
+---
+
+## ¿Por qué un blog?
+
+Tu blog es tu espacio en la web para:
+
+::: {.incremental}
+- **Visibilizarte** profesionalmente
+- **Compartir** proyectos, análisis y aprendizajes
+- Construir tu **portafolio** con código real
+- Conectar con la comunidad de R y datos
+:::
+
+---
+
+## Ejemplos 
+
+Algunos blog hechos con Quarto:
+
+- [santiagorusers.github.io](https://santiagorusers.github.io/)
+- [quarto.org](https://quarto.org)
+- [nrennie.rbind.io](https://nrennie.rbind.io)
+- [alejandroromerog.github.io](https://alejandroromerog.github.io)
+- [emilhvitfeldt.com](https://emilhvitfeldt.com)
+- [brodrigues.co](https://brodrigues.co)
+- [karaman.is](https://karaman.is)
+- [andrewheiss.com](https://www.andrewheiss.com/blog/)
+- [ellakaye.co.uk](https://ellakaye.co.uk)
+- [rainbowr.org](https://rainbowr.org)
+
+---
+
+## Herramientas que usaremos
+
+:::: {.columns}
+
+::: {.column width="33%"}
+### Quarto
+Sistema de publicación para crear el blog
+:::
+
+::: {.column width="33%"}
+### RStudio
+IDE para escribir código y contenido
+:::
+
+::: {.column width="33%"}
+### GitHub
+Repositorio y plataforma de publicación
+:::
+
+::::
+
+---
+
+## Estructura de un blog en Quarto
+
+```
+mi-blog/
+├── _quarto.yml      # configuración del sitio
+├── index.qmd        # página principal
+├── about.qmd        # sobre ti
+└── posts/
+    ├── primer-post/
+    │   └── index.qmd
+    └── segundo-post/
+        └── index.qmd
+```
+
+Cada entrada es un archivo `.qmd` dentro de `posts/`.
+
+---
+
+## Creando el blog
+
+En RStudio:
+
+**File → New Project → New Directory → Quarto Blog**
+
+```{r}
+#| eval: false
+# Para previsualizar en vivo:
+quarto::quarto_preview()
+```
+
+Quarto genera el sitio automáticamente cada vez que guardas un archivo.
+
+---
+
+## Anatomía de una entrada
+
+```yaml
+---
+title: "Mi primer análisis en R"
+author: "Tu nombre"
+date: "2026-07-29"
+categories: [R, análisis, datos]
+---
+```
+
+Luego texto en **Markdown** y bloques de código R que se ejecutan al renderizar.
+
+---
+
+## Personalización
+
+Edita `_quarto.yml` para cambiar:
+
+::: {.incremental}
+- **Tema visual** → `theme: cosmo` (o cualquiera de Bootswatch)
+- **Nombre y descripción** del sitio
+- **Barra de navegación** y links
+- **Colores y fuentes** con CSS personalizado
+:::
+
+---
+
+## Publicando con GitHub Pages
+
+1. Crea un repositorio en GitHub
+2. Sube tu proyecto: `git push`
+3. En el YAML, agrega:
+
+```yaml
+project:
+  type: website
+  output-dir: docs
+```
+
+4. En GitHub → Settings → Pages → selecciona la rama y carpeta `docs`
+5. ¡Tu blog está en línea! 🎉
+
+
+---
+
+## Junta {.destacado}
+
+- Muestra tus proyectos con R: gráficos, datos, modelos, mapas, apps!
+- Conoce lo que están haciendo otros miembros de la comunidad
+- Comparte, pregunta, conecta
+
+::: {.centrar}
+**Grupo de usuari@s de R: Santiago de Chile**
+[santiagorusers.github.io](https://santiagorusers.github.io/)
+:::
