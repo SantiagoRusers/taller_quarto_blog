@@ -39,6 +39,10 @@ strong {
   color: $acento !important;
 }
 
+a {
+  text-decoration: underline !important;
+}
+
 // titulos
 h1, h2 {
   border-bottom: 8px solid $acento;

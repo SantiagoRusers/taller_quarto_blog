@@ -20,13 +20,14 @@ execute:
 
 ## ¿Qué haremos hoy?
 
-::: {.incremental}
+:::
 - Crear un blog desde cero con **Quarto** desde **RStudio**
 - Personalizar la apariencia del blog
-- Escribir tu primera publicación
+- Escribir tu primera publicación!
 - Agregar código de R a tus publicaciones
 - Subir el blog a un repositorio **Github**
 - Publicarlo en la web con **GitHub Pages**
+- Conversar sobre R al final!
 :::
 
 ---
@@ -36,16 +37,18 @@ execute:
 :::: {.columns}
 
 ::: {.column}
-Quarto es un sistema de publicación científica y técnica de **código abierto** que permite combinar:
+[Quarto](https://quarto.org) es un **sistema de publicación** de código abierto. Para crear contenido, combina:
 
-- Texto en Markdown
-- Código en R, Python, Julia…
-- Resultados, gráficos y tablas
+- Texto en [Markdown](https://es.wikipedia.org/wiki/Markdown)
+- Bloques de código en R
+- Gráficos, tablas, resultados interactivos
+- HTML y CSS, como todo en la web
 :::
 
 ::: {.column}
+Un documento Quarto `.qmd` puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)
 
-Soporta múltiples formatos de salida: HTML, PDF, presentaciones, **blogs**, libros y más.
+**Quarto → cualquier formato!**
 :::
 
 ::::
@@ -54,13 +57,14 @@ Soporta múltiples formatos de salida: HTML, PDF, presentaciones, **blogs**, lib
 
 ## ¿Por qué un blog?
 
-Tu blog es tu espacio en la web para:
+Tu blog es tu espacio en la internet.
 
-::: {.incremental}
-- **Visibilizarte** profesionalmente
+:::
+- Unificar tu **presencia digital**
+- **Aprender** haciendo
 - **Compartir** proyectos, análisis y aprendizajes
-- Construir tu **portafolio** con código real
-- Conectar con la comunidad de R y datos
+- Construir tu **portafolio** profesional
+- Conectar con la **comunidad**
 :::
 
 ---

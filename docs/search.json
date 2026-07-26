@@ -4,21 +4,21 @@
     "href": "taller_quarto_blog.html#qué-haremos-hoy",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "¿Qué haremos hoy?",
-    "text": "¿Qué haremos hoy?\n\nCrear un blog desde cero con Quarto desde RStudio\nPersonalizar la apariencia del blog\nEscribir tu primera publicación\nAgregar código de R a tus publicaciones\nSubir el blog a un repositorio Github\nPublicarlo en la web con GitHub Pages"
+    "text": "¿Qué haremos hoy?\n::: - Crear un blog desde cero con Quarto desde RStudio - Personalizar la apariencia del blog - Escribir tu primera publicación! - Agregar código de R a tus publicaciones - Subir el blog a un repositorio Github - Publicarlo en la web con GitHub Pages - Conversar sobre R al final! :::"
   },
   {
     "objectID": "taller_quarto_blog.html#qué-es-quarto",
     "href": "taller_quarto_blog.html#qué-es-quarto",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "¿Qué es Quarto?",
-    "text": "¿Qué es Quarto?\n\n\nQuarto es un sistema de publicación científica y técnica de código abierto que permite combinar:\n\nTexto en Markdown\nCódigo en R, Python, Julia…\nResultados, gráficos y tablas\n\n\nSoporta múltiples formatos de salida: HTML, PDF, presentaciones, blogs, libros y más."
+    "text": "¿Qué es Quarto?\n\n\nQuarto es un sistema de publicación de código abierto. Para crear contenido, combina:\n\nTexto en Markdown\nBloques de código en R\nGráficos, tablas, resultados interactivos\nHTML y CSS, como todo en la web\n\n\nUn documento Quarto .qmd puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)\nQuarto → cualquier formato!"
   },
   {
     "objectID": "taller_quarto_blog.html#por-qué-un-blog",
     "href": "taller_quarto_blog.html#por-qué-un-blog",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "¿Por qué un blog?",
-    "text": "¿Por qué un blog?\nTu blog es tu espacio en la web para:\n\nVisibilizarte profesionalmente\nCompartir proyectos, análisis y aprendizajes\nConstruir tu portafolio con código real\nConectar con la comunidad de R y datos"
+    "text": "¿Por qué un blog?\nTu blog es tu espacio en la internet.\n::: - Unificar tu presencia digital - Aprender haciendo - Compartir proyectos, análisis y aprendizajes - Construir tu portafolio profesional - Conectar con la comunidad :::"
   },
   {
     "objectID": "taller_quarto_blog.html#ejemplos",
