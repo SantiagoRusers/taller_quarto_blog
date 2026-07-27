@@ -194,7 +194,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="arcoiris.png" data-background-position="top" data-background-repeat="no-repeat" data-background-size="100% 17%" class="quarto-title-block center">
+<section id="title-slide" data-background-image="img/arcoiris.png" data-background-position="top" data-background-repeat="no-repeat" data-background-size="100% 17%" class="quarto-title-block center">
   <h1 class="title">Crea tu propia página web con <span class="rosa">Quarto</span> y <span class="rosa">R</span></h1>
   <p class="subtitle">Grupo de usuari@s de R, Santiago de Chile</p>
 
@@ -226,10 +226,11 @@
 <h2>¿Por qué un blog?</h2>
 <p>Tu blog es tu espacio en la internet.</p>
 <p>::: - Unificar tu <strong>presencia digital</strong> - <strong>Aprender</strong> haciendo - <strong>Compartir</strong> proyectos, análisis y aprendizajes - Construir tu <strong>portafolio</strong> profesional - Conectar con la <strong>comunidad</strong> :::</p>
+<p>Si subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉</p>
 </section>
 <section id="ejemplos" class="slide level2">
 <h2>Ejemplos</h2>
-<p>Algunos blog hechos con Quarto:</p>
+<p>Algunos sitios web hechos con Quarto:</p>
 <ul>
 <li><a href="https://santiagorusers.github.io/">santiagorusers.github.io</a></li>
 <li><a href="https://quarto.org">quarto.org</a></li>
@@ -247,57 +248,86 @@
 <h2>Herramientas que usaremos</h2>
 <div class="columns">
 <div class="column" style="width:33%;">
+<p><img data-src="img/logo-quarto.png" height="200"></p>
 <h3 id="quarto">Quarto</h3>
 <p>Sistema de publicación para crear el blog</p>
 </div><div class="column" style="width:33%;">
+<p><img data-src="img/logo-rstudio.png" height="200"></p>
 <h3 id="rstudio">RStudio</h3>
 <p>IDE para escribir código y contenido</p>
 </div><div class="column" style="width:33%;">
+<p><img data-src="img/logo-github.png" height="200"></p>
 <h3 id="github">GitHub</h3>
 <p>Repositorio y plataforma de publicación</p>
 </div></div>
 </section>
+<section id="crear-el-blog" class="slide level2">
+<h2>Crear el blog</h2>
+<p>En <strong>RStudio</strong>:</p>
+<p><strong>File → New Project → New Directory → Quarto Blog</strong></p>
+</section>
+<section id="elementos-de-un-blog-quarto" class="slide level2">
+<h2>Elementos de un blog Quarto</h2>
+<p>Al crear el blog, tendremos estos elementos en la carpeta/proyecto:</p>
+<ul>
+<li><code>_quarto.yml</code>: archivo de configuración general</li>
+<li><code>index.qmd</code>: página principal del sitio<sup>1</sup></li>
+<li><code>about.qmd</code>: página de “sobre ti”</li>
+<li><code>{x}.qmd</code>: otras páginas para nuestro sitio web</li>
+<li><code>posts/</code>: carpeta con las publicaciones del blog</li>
+<li><code>custom.scss</code>: hoja de estilos para personalizar el blog</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta</p></li></ol></aside></section>
 <section id="estructura-de-un-blog-en-quarto" class="slide level2">
 <h2>Estructura de un blog en Quarto</h2>
 <pre><code>mi-blog/
-├── _quarto.yml      # configuración del sitio
-├── index.qmd        # página principal
-├── about.qmd        # sobre ti
+├── _quarto.yml        # configuración
+├── index.qmd          # página principal
+├── about.qmd          # sobre ti
 └── posts/
     ├── primer-post/
-    │   └── index.qmd
+    │   └── index.qmd  # contenido
     └── segundo-post/
-        └── index.qmd</code></pre>
-<p>Cada entrada es un archivo <code>.qmd</code> dentro de <code>posts/</code>.</p>
+        └── index.qmd  # contenido</code></pre>
+<p>Cada documento <code>.qmd</code> es una página del sitio. Cada documento <code>.qmd</code> dentro de <code>posts</code> es una publicación del blog.</p>
 </section>
-<section id="creando-el-blog" class="slide level2">
-<h2>Creando el blog</h2>
-<p>En RStudio:</p>
-<p><strong>File → New Project → New Directory → Quarto Blog</strong></p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># Para previsualizar en vivo:</span></span>
-<span id="cb2-2"><a></a>quarto<span class="sc">::</span><span class="fu">quarto_preview</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Quarto genera el sitio automáticamente cada vez que guardas un archivo.</p>
+<section id="publicaciones" class="slide level2">
+<h2>Publicaciones</h2>
+<p>Crea un documento <code>index.qmd</code> en una carpeta dentro de <code>posts</code>, o usa <code>quarto::new_blog_post("Título")</code></p>
+<p>Luego rellena el encabezado <code>yaml</code> de la publicación:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="pp">---</span></span>
+<span id="cb2-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mi primer análisis en R"</span></span>
+<span id="cb2-3"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Serie de análisis de datos"</span></span>
+<span id="cb2-4"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
+<span id="cb2-5"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-07-29"</span></span>
+<span id="cb2-6"><a></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">R</span><span class="kw">,</span><span class="at"> análisis</span><span class="kw">,</span><span class="at"> datos</span><span class="kw">]</span></span>
+<span id="cb2-7"><a></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"imagen.jpeg"</span></span>
+<span id="cb2-8"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El contenido se escribe en <strong>Markdown</strong>, en <strong>HTML</strong>, y en bloques de <strong>código R</strong>.</p>
 </section>
-<section id="anatomía-de-una-entrada" class="slide level2">
-<h2>Anatomía de una entrada</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="pp">---</span></span>
-<span id="cb3-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mi primer análisis en R"</span></span>
-<span id="cb3-3"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
-<span id="cb3-4"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-07-29"</span></span>
-<span id="cb3-5"><a></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">R</span><span class="kw">,</span><span class="at"> análisis</span><span class="kw">,</span><span class="at"> datos</span><span class="kw">]</span></span>
-<span id="cb3-6"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Luego texto en <strong>Markdown</strong> y bloques de código R que se ejecutan al renderizar.</p>
+<section class="slide level2">
+
+<h3 id="markdown">Markdown</h3>
+<p>Markdown es una sintaxis de marcado simple para dar estilo a textos a partir de texto plano. Se agregan símbolos en el texto, y al renderizarlo, se convertirá en texto HTML enriquecido.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a></a><span class="fu">## Subtítulos</span></span>
+<span id="cb3-2"><a></a><span class="fu">### Subsubtítulos</span></span>
+<span id="cb3-3"><a></a>**negrita**</span>
+<span id="cb3-4"><a></a>*itálica* o _itálica_</span>
+<span id="cb3-5"><a></a><span class="dt">&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>subrayado<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span></span>
+<span id="cb3-6"><a></a>~~tachado~~</span>
+<span id="cb3-7"><a></a><span class="in">`código`</span></span>
+<span id="cb3-8"><a></a><span class="co">[</span><span class="ot">Enlaces</span><span class="co">](http://www.enlace.cl)</span></span>
+<span id="cb3-9"><a></a>Agregar una nota al pie<span class="ot">[^1]</span>.</span>
+<span id="cb3-10"><a></a><span class="ot">[^1]: </span>Esta es una nota al pie</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="personalización" class="slide level2">
 <h2>Personalización</h2>
 <p>Edita <code>_quarto.yml</code> para cambiar:</p>
 <ul>
-<li class="fragment"><strong>Tema visual</strong> → <code>theme: cosmo</code> (o cualquiera de Bootswatch)</li>
-<li class="fragment"><strong>Nombre y descripción</strong> del sitio</li>
-<li class="fragment"><strong>Barra de navegación</strong> y links</li>
-<li class="fragment"><strong>Colores y fuentes</strong> con CSS personalizado</li>
+<li><strong>Tema visual</strong> → <code>theme: cosmo</code> (o cualquiera de Bootswatch)</li>
+<li><strong>Nombre y descripción</strong> del sitio</li>
+<li><strong>Barra de navegación</strong> y links</li>
+<li><strong>Colores y fuentes</strong> con CSS personalizado</li>
 </ul>
 </section>
 <section id="publicando-con-github-pages" class="slide level2">
@@ -328,6 +358,7 @@
 
 
 </section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -543,44 +574,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

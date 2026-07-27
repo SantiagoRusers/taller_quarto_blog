@@ -2,7 +2,7 @@
 title: "Crea tu propia página web con [Quarto]{.rosa} y [R]{.rosa}"
 subtitle: "Grupo de usuari@s de R, Santiago de Chile"
 title-slide-attributes:
-  data-background-image: arcoiris.png
+  data-background-image: img/arcoiris.png
   data-background-size: "100% 17%"
   data-background-position: top
   data-background-repeat: no-repeat
@@ -67,11 +67,13 @@ Tu blog es tu espacio en la internet.
 - Conectar con la **comunidad**
 :::
 
+Si subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉
+
 ---
 
 ## Ejemplos 
 
-Algunos blog hechos con Quarto:
+Algunos sitios web hechos con Quarto:
 
 - [santiagorusers.github.io](https://santiagorusers.github.io/)
 - [quarto.org](https://quarto.org)
@@ -91,21 +93,53 @@ Algunos blog hechos con Quarto:
 :::: {.columns}
 
 ::: {.column width="33%"}
+![](img/logo-quarto.png){height="200px"}
+
 ### Quarto
 Sistema de publicación para crear el blog
 :::
 
 ::: {.column width="33%"}
+![](img/logo-rstudio.png){height="200px"}
+
 ### RStudio
 IDE para escribir código y contenido
 :::
 
 ::: {.column width="33%"}
+![](img/logo-github.png){height="200px"}
+
 ### GitHub
 Repositorio y plataforma de publicación
 :::
 
 ::::
+
+
+---
+
+## Crear el blog
+
+En **RStudio**:
+
+**File → New Project → New Directory → Quarto Blog**
+
+
+---
+
+## Elementos de un blog Quarto
+
+Al crear el blog, tendremos estos elementos en la carpeta/proyecto:
+
+- `_quarto.yml`: archivo de configuración general
+- `index.qmd`: página principal del sitio[^1]
+- `about.qmd`: página de "sobre ti"
+- `{x}.qmd`: otras páginas para nuestro sitio web
+- `posts/`: carpeta con las publicaciones del blog
+- `custom.scss`: hoja de estilos para personalizar el blog
+
+[^1]: en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta
+
 
 ---
 
@@ -113,48 +147,57 @@ Repositorio y plataforma de publicación
 
 ```
 mi-blog/
-├── _quarto.yml      # configuración del sitio
-├── index.qmd        # página principal
-├── about.qmd        # sobre ti
+├── _quarto.yml        # configuración
+├── index.qmd          # página principal
+├── about.qmd          # sobre ti
 └── posts/
     ├── primer-post/
-    │   └── index.qmd
+    │   └── index.qmd  # contenido
     └── segundo-post/
-        └── index.qmd
+        └── index.qmd  # contenido
 ```
 
-Cada entrada es un archivo `.qmd` dentro de `posts/`.
+Cada documento `.qmd` es una página del sitio. Cada documento `.qmd` dentro de `posts` es una publicación del blog.
 
 ---
 
-## Creando el blog
+## Publicaciones
 
-En RStudio:
+Crea un documento `index.qmd` en una carpeta dentro de `posts`, o usa `quarto::new_blog_post("Título")`
 
-**File → New Project → New Directory → Quarto Blog**
-
-```{r}
-#| eval: false
-# Para previsualizar en vivo:
-quarto::quarto_preview()
-```
-
-Quarto genera el sitio automáticamente cada vez que guardas un archivo.
-
----
-
-## Anatomía de una entrada
+Luego rellena el encabezado `yaml` de la publicación:
 
 ```yaml
 ---
 title: "Mi primer análisis en R"
+subtitle: "Serie de análisis de datos"
 author: "Tu nombre"
 date: "2026-07-29"
 categories: [R, análisis, datos]
+image: "imagen.jpeg"
 ---
 ```
 
-Luego texto en **Markdown** y bloques de código R que se ejecutan al renderizar.
+El contenido se escribe en **Markdown**, en **HTML**, y en bloques de **código R**.
+
+---
+
+### Markdown
+
+Markdown es una sintaxis de marcado simple para dar estilo a textos a partir de texto plano. Se agregan símbolos en el texto, y al renderizarlo, se convertirá en texto HTML enriquecido.
+
+```markdown
+## Subtítulos
+### Subsubtítulos
+**negrita**
+*itálica* o _itálica_
+<u>subrayado</u>
+~~tachado~~
+`código`
+[Enlaces](http://www.enlace.cl)
+Agregar una nota al pie[^1].
+[^1]: Esta es una nota al pie
+```
 
 ---
 
@@ -162,12 +205,10 @@ Luego texto en **Markdown** y bloques de código R que se ejecutan al renderizar
 
 Edita `_quarto.yml` para cambiar:
 
-::: {.incremental}
 - **Tema visual** → `theme: cosmo` (o cualquiera de Bootswatch)
 - **Nombre y descripción** del sitio
 - **Barra de navegación** y links
 - **Colores y fuentes** con CSS personalizado
-:::
 
 ---
 
