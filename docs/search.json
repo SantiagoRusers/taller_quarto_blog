@@ -7,13 +7,6 @@
     "text": "¿Qué haremos hoy?\n\nCrear un sitio web desde cero con Quarto desde RStudio\nPersonalizar la apariencia del sitio\nEscribir tu primera publicación!\nAgregar código de R a tus publicaciones\nSubir el blog a un repositorio Github\nPublicarlo en la web con GitHub Pages\nConversar sobre R al final!"
   },
   {
-    "objectID": "taller_quarto_blog.html#qué-es-quarto",
-    "href": "taller_quarto_blog.html#qué-es-quarto",
-    "title": "Crea tu propia página web con Quarto y R",
-    "section": "¿Qué es Quarto?",
-    "text": "¿Qué es Quarto?\n\n\nQuarto es un sistema de publicación de código abierto. Para crear contenido, combina:\n\nTexto en Markdown\nBloques de código en R\nGráficos, tablas, resultados interactivos\nHTML y CSS, como todo en la web\n\n\nUn documento Quarto .qmd puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)\nQuarto → cualquier formato!"
-  },
-  {
     "objectID": "taller_quarto_blog.html#por-qué-crear-un-blog",
     "href": "taller_quarto_blog.html#por-qué-crear-un-blog",
     "title": "Crea tu propia página web con Quarto y R",
@@ -21,11 +14,11 @@
     "text": "¿Por qué crear un blog?\nTu blog es tu espacio en la internet.\nTe servirá para:\n\nUnificar tu presencia digital\nAprender haciendo\nCompartir proyectos, análisis y aprendizajes\nConstruir tu portafolio profesional\nConectar con la comunidad\n\nSi subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉"
   },
   {
-    "objectID": "taller_quarto_blog.html#ejemplos",
-    "href": "taller_quarto_blog.html#ejemplos",
+    "objectID": "taller_quarto_blog.html#ejemplos-de-sitios-quarto",
+    "href": "taller_quarto_blog.html#ejemplos-de-sitios-quarto",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "Ejemplos",
-    "text": "Ejemplos\nAlgunos sitios web hechos con Quarto:\n\n\n\nsantiagorusers.github.io\nquarto.org\nnrennie.rbind.io\nemilhvitfeldt.com\nbrodrigues.co\n\n\n\nkaraman.is\nandrewheiss.com\nellakaye.co.uk\nrainbowr.org\nalejandroromerog.github.io"
+    "section": "Ejemplos de sitios Quarto",
+    "text": "Ejemplos de sitios Quarto\nAlgunos sitios web hechos con Quarto:\n\n\n\nsantiagorusers.github.io\nquarto.org\nnrennie.rbind.io\nemilhvitfeldt.com\nbrodrigues.co\n\n\n\nnoahweidig.com\nkaraman.is\nandrewheiss.com\nellakaye.co.uk\nrainbowr.org\nalejandroromerog.github.io"
   },
   {
     "objectID": "taller_quarto_blog.html#herramientas-que-usaremos",
@@ -35,11 +28,18 @@
     "text": "Herramientas que usaremos\n\n\n\nQuarto\nSistema de publicación para crear el blog\n\n\nRStudio\nIDE para escribir código y contenido\n\n\nGitHub\nRepositorio y plataforma de publicación"
   },
   {
-    "objectID": "taller_quarto_blog.html#tutoriales",
-    "href": "taller_quarto_blog.html#tutoriales",
+    "objectID": "taller_quarto_blog.html#qué-es-quarto",
+    "href": "taller_quarto_blog.html#qué-es-quarto",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "Tutoriales",
-    "text": "Tutoriales\n\nCreating a Website, tutorial oficial de Quarto\nCreate an Online Presence with Quarto Websites, tutorial por Andrew Heiss\nManual de Quarto, sitio de la Universidad Nacional de Colombia\nCrea páginas web y blogs con R+Quarto, y publícalos online con GitHub Pages, tutorial por Bastián Olea"
+    "section": "¿Qué es Quarto?",
+    "text": "¿Qué es Quarto?\n\n\nQuarto es un sistema de publicación de código abierto. Para crear contenido, combina:\n\nTexto en Markdown\nBloques de código en R\nGráficos, tablas, resultados interactivos\nHTML y CSS, como todo en la web\n\n\nUn documento Quarto .qmd puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)\nQuarto → cualquier formato!"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#tutoriales-de-sitios-quarto",
+    "href": "taller_quarto_blog.html#tutoriales-de-sitios-quarto",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Tutoriales de sitios Quarto",
+    "text": "Tutoriales de sitios Quarto\n\nCreating a Website, tutorial oficial de Quarto\nCreate an Online Presence with Quarto Websites, tutorial por Andrew Heiss\nManual de Quarto, sitio de la Universidad Nacional de Colombia\nCrea páginas web y blogs con R+Quarto, y publícalos online con GitHub Pages, tutorial por Bastián Olea"
   },
   {
     "objectID": "taller_quarto_blog.html#crear-el-blog",
@@ -77,11 +77,18 @@
     "text": "Personalización\n_quarto.yml tiene las configuraciones generales:\n\n\nTema\nformat:\n  html:\n    theme:\n      - minty\n      - tema.scss\nVer lista de temas\n\nMenús\nwebsite:\n  ...\n  navbar:\n    left: \n      - blog.qmd\n    right:\n\nDescripción\nwebsite:\n  title: \"Blogcito\"\n  description: \"Muy lindo\""
   },
   {
-    "objectID": "taller_quarto_blog.html#publicar-en-github-pages",
-    "href": "taller_quarto_blog.html#publicar-en-github-pages",
+    "objectID": "taller_quarto_blog.html#publicar-el-sitio",
+    "href": "taller_quarto_blog.html#publicar-el-sitio",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "Publicar en GitHub Pages",
-    "text": "Publicar en GitHub Pages\n\nCrea un repositorio en GitHub\nSube tu proyecto: git push\nEn el YAML, agrega:\n\n_quarto.yml\nproject:\n  type: website\n  output-dir: docs\n.nojekyll\n\nEn GitHub → Settings → Pages → selecciona la rama y carpeta docs\n¡Tu blog está en línea! 🎉"
+    "section": "Publicar el sitio",
+    "text": "Publicar el sitio\n\nConfigurar el sitio web\nConfigurar Git\nCrear un repositorio local\nCrea un repositorio en GitHub\nSubir el proyecto a GitHub\nConfigurar GitHub Pages"
+  },
+  {
+    "objectID": "taller_quarto_blog.html#subir-a-github-pages",
+    "href": "taller_quarto_blog.html#subir-a-github-pages",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Subir a GitHub Pages",
+    "text": "Subir a GitHub Pages\nConfigurar GitHub Pages\nEn el repositorio de GitHub: Settings → Pages\nSelecciona la rama y carpeta docs\nEsperar a que se suba! 🤞🏼\nTutorial de GitHub Pages"
   },
   {
     "objectID": "taller_quarto_blog.html#junta",

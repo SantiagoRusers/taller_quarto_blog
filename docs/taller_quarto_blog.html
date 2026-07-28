@@ -97,7 +97,7 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0e5e1e0170b1af9574a8dc479271e584.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5575e693593a4c9f34eb78ffc829bd28.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -214,22 +214,6 @@
 <li>Conversar sobre R al final!</li>
 </ul>
 </section>
-<section id="qué-es-quarto" class="slide level2">
-<h2>¿Qué es Quarto?</h2>
-<div class="columns">
-<div class="column">
-<p><a href="https://quarto.org">Quarto</a> es un <strong>sistema de publicación</strong> de código abierto. Para crear contenido, combina:</p>
-<ul>
-<li>Texto en <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a></li>
-<li>Bloques de código en R</li>
-<li>Gráficos, tablas, resultados interactivos</li>
-<li>HTML y CSS, como todo en la web</li>
-</ul>
-</div><div class="column">
-<p>Un documento Quarto <code>.qmd</code> puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)</p>
-<p><strong>Quarto → cualquier formato!</strong></p>
-</div></div>
-</section>
 <section id="por-qué-crear-un-blog" class="slide level2">
 <h2>¿Por qué crear un blog?</h2>
 <p>Tu blog es tu espacio en la internet.</p>
@@ -243,8 +227,8 @@
 </ul>
 <p>Si subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉</p>
 </section>
-<section id="ejemplos" class="slide level2">
-<h2>Ejemplos</h2>
+<section id="ejemplos-de-sitios-quarto" class="slide level2">
+<h2>Ejemplos de sitios Quarto</h2>
 <p>Algunos sitios web hechos con Quarto:</p>
 <div class="columns">
 <div class="column">
@@ -257,6 +241,7 @@
 </ul>
 </div><div class="column">
 <ul>
+<li><a href="https://www.noahweidig.com">noahweidig.com</a></li>
 <li><a href="https://karaman.is">karaman.is</a></li>
 <li><a href="https://www.andrewheiss.com/blog/">andrewheiss.com</a></li>
 <li><a href="https://ellakaye.co.uk">ellakaye.co.uk</a></li>
@@ -282,8 +267,24 @@
 <p>Repositorio y plataforma de publicación</p>
 </div></div>
 </section>
-<section id="tutoriales" class="slide level2">
-<h2>Tutoriales</h2>
+<section id="qué-es-quarto" class="slide level2">
+<h2>¿Qué es Quarto?</h2>
+<div class="columns">
+<div class="column">
+<p><a href="https://quarto.org">Quarto</a> es un <strong>sistema de publicación</strong> de código abierto. Para crear contenido, combina:</p>
+<ul>
+<li>Texto en <a href="https://es.wikipedia.org/wiki/Markdown">Markdown</a></li>
+<li>Bloques de código en R</li>
+<li>Gráficos, tablas, resultados interactivos</li>
+<li>HTML y CSS, como todo en la web</li>
+</ul>
+</div><div class="column">
+<p>Un documento Quarto <code>.qmd</code> puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)</p>
+<p><strong>Quarto → cualquier formato!</strong></p>
+</div></div>
+</section>
+<section id="tutoriales-de-sitios-quarto" class="slide level2">
+<h2>Tutoriales de sitios Quarto</h2>
 <ul>
 <li><a href="https://quarto.org/docs/websites/">Creating a Website</a>, tutorial oficial de Quarto</li>
 <li><a href="https://andrewheiss.github.io/quarto-websites_2025-10/">Create an Online Presence with Quarto Websites</a>, tutorial por <a href="https://www.andrewheiss.com">Andrew Heiss</a></li>
@@ -403,18 +404,6 @@
 </section>
 <section class="slide level2">
 
-<h3 id="personalización-avanzada">Personalización avanzada</h3>
-<p>En el <code>_quarto.yml</code> podemos cambiar variables para personalizar el sitio:</p>
-<ul>
-<li><p>Barra de navegación: <code>$navbar-bg</code> y <code>$navbar-fg</code></p></li>
-<li><p>Cuerpo del sitio: <code>$body-bg</code>, <code>$body-color</code> y <code>$link-color</code></p></li>
-<li><p>Detalles como <code>$input-bg</code>, <code>$toc-color</code>, <code>$popover-bg</code>, <code>$footer-bg</code>…</p></li>
-<li><p><a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables">Variables SASS más frecuentes</a></p></li>
-<li><p><a href="https://rstudio.github.io/bslib/articles/bs5-variables/index.html">Todas las variables SASS</a></p></li>
-</ul>
-</section>
-<section class="slide level2">
-
 <h3 id="tipografías">Tipografías</h3>
 <p>Buscar tipografías en <a href="https://fonts.google.com">Google Fonts</a></p>
 <p><strong>Get font → Get embed font → <span class="citation" data-cites="import">@import</span></strong></p>
@@ -432,6 +421,19 @@
 </section>
 <section class="slide level2">
 
+<h3 id="personalización-avanzada">Personalización avanzada</h3>
+<p>En el <code>.scss</code> podemos cambiar variables para personalizar el sitio:</p>
+<ul>
+<li><p>Barra de navegación: <code>$navbar-bg</code> y <code>$navbar-fg</code></p></li>
+<li><p>Cuerpo del sitio: <code>$body-bg</code>, <code>$body-color</code> y <code>$link-color</code>,</p></li>
+<li><p>Tamaños de texto: <code>$font-size-root</code>, <code>$h1-font-size</code>, <code>$h2-font-size</code>, <code>$line-height-base</code>,</p></li>
+<li><p>Detalles como <code>$input-bg</code>, <code>$toc-color</code>, <code>$popover-bg</code>, <code>$footer-bg</code>…</p></li>
+<li><p><a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables">Variables SASS más frecuentes</a></p></li>
+<li><p><a href="https://rstudio.github.io/bslib/articles/bs5-variables/index.html">Todas las variables SASS</a></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
 <h4 id="otros-tutoriales">Otros tutoriales</h4>
 <p>Para más información sobre crear y personalizar tus sitios web, revisa estos tutoriales:</p>
 <ul>
@@ -439,22 +441,63 @@
 <li><a href="https://damien-dupre.github.io/BAA1028/lectures/lecture_7#/title-slide">Damien Dupré</a></li>
 </ul>
 </section>
-<section id="publicar-en-github-pages" class="slide level2">
-<h2>Publicar en GitHub Pages</h2>
+<section id="publicar-el-sitio" class="slide level2">
+<h2>Publicar el sitio</h2>
 <ol type="1">
+<li>Configurar el sitio web</li>
+<li>Configurar Git</li>
+<li>Crear un repositorio local</li>
 <li>Crea un repositorio en GitHub</li>
-<li>Sube tu proyecto: <code>git push</code></li>
-<li>En el YAML, agrega:</li>
+<li>Subir el proyecto a GitHub</li>
+<li>Configurar GitHub Pages</li>
 </ol>
+</section>
+<section class="slide level2">
+
+<h3 id="configurar-el-sitio-web">Configurar el sitio web</h3>
 <p><code>_quarto.yml</code></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb9-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
 <span id="cb9-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>.nojekyll</code></p>
-<ol start="4" type="1">
-<li>En GitHub → Settings → Pages → selecciona la rama y carpeta <code>docs</code></li>
-<li>¡Tu blog está en línea! 🎉</li>
-</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="configurar-git">Configurar Git</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Configurar cuenta y crear un <em>token</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"bastianolea"</span>, <span class="at">user.email =</span> <span class="st">"bastianolea@gmail.com"</span>)</span>
+<span id="cb11-2"><a></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Copiar <em>token</em> e ingresarlo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Confirmar situación:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+
+<h3 id="crear-un-repositorio-local">Crear un repositorio local</h3>
+<p>Crear repositorio local:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="crear-un-repositorio-remoto">Crear un repositorio remoto</h3>
+<p>Crear repositorio remoto</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+
+<h4 id="resumen-de-git">Resumen de Git</h4>
+<p>Registrar cambios (<code>add</code>), <em>commit</em> cambios, subir cambios (<code>push</code>)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource git number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>git add .</span>
+<span id="cb16-2"><a></a>git commit -m "cambios en el blog"</span>
+<span id="cb16-3"><a></a>git push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="https://happygitwithr.com">Tutorial completo sobre usar Git en R</a></p>
+</section>
+<section id="subir-a-github-pages" class="slide level2">
+<h2>Subir a GitHub Pages</h2>
+<h3 id="configurar-github-pages">Configurar GitHub Pages</h3>
+<p>En el repositorio de GitHub: <strong>Settings</strong> → <strong>Pages</strong></p>
+<p>Selecciona la rama y carpeta <code>docs</code></p>
+<p>Esperar a que se suba! 🤞🏼</p>
+<p><a href="https://quarto.org/docs/publishing/github-pages.html">Tutorial de GitHub Pages</a></p>
 </section>
 <section id="junta" class="slide level2 destacado">
 <h2>Junta</h2>

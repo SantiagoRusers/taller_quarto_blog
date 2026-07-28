@@ -30,29 +30,6 @@ execute:
 
 ---
 
-## ¿Qué es Quarto?
-
-:::: {.columns}
-
-::: {.column}
-[Quarto](https://quarto.org) es un **sistema de publicación** de código abierto. Para crear contenido, combina:
-
-- Texto en [Markdown](https://es.wikipedia.org/wiki/Markdown)
-- Bloques de código en R
-- Gráficos, tablas, resultados interactivos
-- HTML y CSS, como todo en la web
-:::
-
-::: {.column}
-Un documento Quarto `.qmd` puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)
-
-**Quarto → cualquier formato!**
-:::
-
-::::
-
----
-
 ## ¿Por qué crear un blog?
 
 Tu blog es tu espacio en la internet.
@@ -69,7 +46,7 @@ Si subes cosas a tu blog es más fácil que podamos compartirlas para que llegue
 
 ---
 
-## Ejemplos 
+## Ejemplos de sitios Quarto
 
 Algunos sitios web hechos con Quarto:
 
@@ -82,6 +59,7 @@ Algunos sitios web hechos con Quarto:
 - [brodrigues.co](https://brodrigues.co)
 :::
 ::: {.column}
+- [noahweidig.com](https://www.noahweidig.com)
 - [karaman.is](https://karaman.is)
 - [andrewheiss.com](https://www.andrewheiss.com/blog/)
 - [ellakaye.co.uk](https://ellakaye.co.uk)
@@ -89,6 +67,7 @@ Algunos sitios web hechos con Quarto:
 - [alejandroromerog.github.io](https://alejandroromerog.github.io)
 :::
 ::::
+
 
 ---
 
@@ -119,9 +98,33 @@ Repositorio y plataforma de publicación
 
 ::::
 
+----
+
+## ¿Qué es Quarto?
+
+:::: {.columns}
+
+::: {.column}
+[Quarto](https://quarto.org) es un **sistema de publicación** de código abierto. Para crear contenido, combina:
+
+- Texto en [Markdown](https://es.wikipedia.org/wiki/Markdown)
+- Bloques de código en R
+- Gráficos, tablas, resultados interactivos
+- HTML y CSS, como todo en la web
+:::
+
+::: {.column}
+Un documento Quarto `.qmd` puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)
+
+**Quarto → cualquier formato!**
+:::
+
+::::
+
+
 ---
 
-## Tutoriales
+## Tutoriales de sitios Quarto
 
 - [Creating a Website](https://quarto.org/docs/websites/), tutorial oficial de Quarto
 - [Create an Online Presence with Quarto Websites](https://andrewheiss.github.io/quarto-websites_2025-10/), tutorial por [Andrew Heiss](https://www.andrewheiss.com)
@@ -288,19 +291,6 @@ website:
 
 ---
 
-### Personalización avanzada
-
-En el `_quarto.yml` podemos cambiar variables para personalizar el sitio:
-
-- Barra de navegación: `$navbar-bg` y `$navbar-fg`
-- Cuerpo del sitio: `$body-bg`, `$body-color` y `$link-color`
-- Detalles como `$input-bg`, `$toc-color`, `$popover-bg`, `$footer-bg`...
-
-- [Variables SASS más frecuentes](https://quarto.org/docs/output-formats/html-themes.html#sass-variables)
-- [Todas las variables SASS](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
-
----
-
 ### Tipografías
 
 Buscar tipografías en [Google Fonts](https://fonts.google.com)
@@ -329,6 +319,21 @@ body {
 
 ---
 
+### Personalización avanzada
+
+En el `.scss` podemos cambiar variables para personalizar el sitio:
+
+- Barra de navegación: `$navbar-bg` y `$navbar-fg`
+- Cuerpo del sitio: `$body-bg`, `$body-color` y `$link-color`, 
+- Tamaños de texto: `$font-size-root`, `$h1-font-size`, `$h2-font-size`, `$line-height-base`,
+- Detalles como `$input-bg`, `$toc-color`, `$popover-bg`, `$footer-bg`...
+
+- [Variables SASS más frecuentes](https://quarto.org/docs/output-formats/html-themes.html#sass-variables)
+- [Todas las variables SASS](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
+
+---
+
+
 #### Otros tutoriales
 
 Para más información sobre crear y personalizar tus sitios web, revisa estos tutoriales:
@@ -339,11 +344,19 @@ Para más información sobre crear y personalizar tus sitios web, revisa estos t
 ---
 
 
-## Publicar en GitHub Pages
+## Publicar el sitio
 
-1. Crea un repositorio en GitHub
-2. Sube tu proyecto: `git push`
-3. En el YAML, agrega:
+1. Configurar el sitio web
+2. Configurar Git
+3. Crear un repositorio local
+4. Crea un repositorio en GitHub
+5. Subir el proyecto a GitHub
+3. Configurar GitHub Pages
+
+---
+
+### Configurar el sitio web
+
 
 `_quarto.yml`
 ```yaml
@@ -354,11 +367,70 @@ project:
 
 `.nojekyll`
 
-4. En GitHub → Settings → Pages → selecciona la rama y carpeta `docs`
-5. ¡Tu blog está en línea! 🎉
+---
+
+### Configurar Git
+
+```r
+install.packages("usethis")
+```
+
+Configurar cuenta y crear un _token_
+```r
+usethis::use_git_config(user.name = "bastianolea", user.email = "bastianolea@gmail.com")
+usethis::create_github_token()
+```
+Copiar _token_ e ingresarlo:
+```r 
+gitcreds::gitcreds_set()
+```
+
+Confirmar situación:
+```r
+usethis::git_sitrep()
+```
+---
+
+### Crear un repositorio local
+
+Crear repositorio local:
+```r
+usethis::use_git()
+```
+### Crear un repositorio remoto
+
+Crear repositorio remoto
+```r
+usethis::use_github()
+```
+
+---
+
+#### Resumen de Git
+
+Registrar cambios (`add`), _commit_ cambios, subir cambios (`push`)
+```git
+git add .
+git commit -m "cambios en el blog"
+git push
+```
+
+[Tutorial completo sobre usar Git en R](https://happygitwithr.com)
+
+---
 
 
+## Subir a GitHub Pages
 
+### Configurar GitHub Pages
+
+En el repositorio de GitHub: **Settings** → **Pages**
+
+Selecciona la rama y carpeta `docs`
+
+Esperar a que se suba! 🤞🏼
+
+[Tutorial de GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
 
 ---
 
