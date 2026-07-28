@@ -20,8 +20,8 @@ execute:
 
 ## ¿Qué haremos hoy?
 
-- Crear un blog desde cero con **Quarto** desde **RStudio**
-- Personalizar la apariencia del blog
+- [Crear un sitio web](https://quarto.org/docs/websites/) desde cero con **Quarto** desde **RStudio**
+- Personalizar la apariencia del sitio
 - Escribir tu primera publicación!
 - Agregar código de R a tus publicaciones
 - Subir el blog a un repositorio **Github**
@@ -53,17 +53,17 @@ Un documento Quarto `.qmd` puede pasar a ser un PDF, Word, HTML, parte de un sit
 
 ---
 
-## ¿Por qué un blog?
+## ¿Por qué crear un blog?
 
 Tu blog es tu espacio en la internet.
 
-:::
+Te servirá para:
+
 - Unificar tu **presencia digital**
 - **Aprender** haciendo
 - **Compartir** proyectos, análisis y aprendizajes
 - Construir tu **portafolio** profesional
 - Conectar con la **comunidad**
-:::
 
 Si subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉
 
@@ -119,6 +119,14 @@ Repositorio y plataforma de publicación
 
 ::::
 
+---
+
+## Tutoriales
+
+- [Creating a Website](https://quarto.org/docs/websites/), tutorial oficial de Quarto
+- [Create an Online Presence with Quarto Websites](https://andrewheiss.github.io/quarto-websites_2025-10/), tutorial por [Andrew Heiss](https://www.andrewheiss.com)
+- [Manual de Quarto](https://estadisticaun.github.io/ManualQuarto/blog.html), sitio de la Universidad Nacional de Colombia
+- [Crea páginas web y blogs con R+Quarto, y publícalos online con GitHub Pages](https://bastianolea.rbind.io/blog/tutorial_quarto_github_pages/), tutorial por Bastián Olea
 
 ---
 
@@ -128,6 +136,9 @@ En **RStudio**:
 
 **File → New Project → New Directory → Quarto Blog**
 
+<br>
+
+### Previsualizar
 Para previsualizar el sitio, le damos _Render_, o ejecutamos:
 
 :::: {.columns}
@@ -279,6 +290,8 @@ website:
 
 ### Personalización avanzada
 
+En el `_quarto.yml` podemos cambiar variables para personalizar el sitio:
+
 - Barra de navegación: `$navbar-bg` y `$navbar-fg`
 - Cuerpo del sitio: `$body-bg`, `$body-color` y `$link-color`
 - Detalles como `$input-bg`, `$toc-color`, `$popover-bg`, `$footer-bg`...
@@ -293,6 +306,8 @@ website:
 Buscar tipografías en [Google Fonts](https://fonts.google.com)
 
 **Get font → Get embed font → @import**
+
+Luego, en el CSS:
 
 #### Importar
 
@@ -311,6 +326,7 @@ body {
    font-family: "Work Sans", sans-serif;
 }
 ```
+
 ---
 
 #### Otros tutoriales

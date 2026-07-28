@@ -4,7 +4,7 @@
     "href": "taller_quarto_blog.html#qué-haremos-hoy",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "¿Qué haremos hoy?",
-    "text": "¿Qué haremos hoy?\n\nCrear un blog desde cero con Quarto desde RStudio\nPersonalizar la apariencia del blog\nEscribir tu primera publicación!\nAgregar código de R a tus publicaciones\nSubir el blog a un repositorio Github\nPublicarlo en la web con GitHub Pages\nConversar sobre R al final!"
+    "text": "¿Qué haremos hoy?\n\nCrear un sitio web desde cero con Quarto desde RStudio\nPersonalizar la apariencia del sitio\nEscribir tu primera publicación!\nAgregar código de R a tus publicaciones\nSubir el blog a un repositorio Github\nPublicarlo en la web con GitHub Pages\nConversar sobre R al final!"
   },
   {
     "objectID": "taller_quarto_blog.html#qué-es-quarto",
@@ -14,11 +14,11 @@
     "text": "¿Qué es Quarto?\n\n\nQuarto es un sistema de publicación de código abierto. Para crear contenido, combina:\n\nTexto en Markdown\nBloques de código en R\nGráficos, tablas, resultados interactivos\nHTML y CSS, como todo en la web\n\n\nUn documento Quarto .qmd puede pasar a ser un PDF, Word, HTML, parte de un sitio web, publicación en un blog, un capítulo de un libro, diapositivas (como ésta!)\nQuarto → cualquier formato!"
   },
   {
-    "objectID": "taller_quarto_blog.html#por-qué-un-blog",
-    "href": "taller_quarto_blog.html#por-qué-un-blog",
+    "objectID": "taller_quarto_blog.html#por-qué-crear-un-blog",
+    "href": "taller_quarto_blog.html#por-qué-crear-un-blog",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "¿Por qué un blog?",
-    "text": "¿Por qué un blog?\nTu blog es tu espacio en la internet.\n::: - Unificar tu presencia digital - Aprender haciendo - Compartir proyectos, análisis y aprendizajes - Construir tu portafolio profesional - Conectar con la comunidad :::\nSi subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉"
+    "section": "¿Por qué crear un blog?",
+    "text": "¿Por qué crear un blog?\nTu blog es tu espacio en la internet.\nTe servirá para:\n\nUnificar tu presencia digital\nAprender haciendo\nCompartir proyectos, análisis y aprendizajes\nConstruir tu portafolio profesional\nConectar con la comunidad\n\nSi subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉"
   },
   {
     "objectID": "taller_quarto_blog.html#ejemplos",
@@ -35,11 +35,18 @@
     "text": "Herramientas que usaremos\n\n\n\nQuarto\nSistema de publicación para crear el blog\n\n\nRStudio\nIDE para escribir código y contenido\n\n\nGitHub\nRepositorio y plataforma de publicación"
   },
   {
+    "objectID": "taller_quarto_blog.html#tutoriales",
+    "href": "taller_quarto_blog.html#tutoriales",
+    "title": "Crea tu propia página web con Quarto y R",
+    "section": "Tutoriales",
+    "text": "Tutoriales\n\nCreating a Website, tutorial oficial de Quarto\nCreate an Online Presence with Quarto Websites, tutorial por Andrew Heiss\nManual de Quarto, sitio de la Universidad Nacional de Colombia\nCrea páginas web y blogs con R+Quarto, y publícalos online con GitHub Pages, tutorial por Bastián Olea"
+  },
+  {
     "objectID": "taller_quarto_blog.html#crear-el-blog",
     "href": "taller_quarto_blog.html#crear-el-blog",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Crear el blog",
-    "text": "Crear el blog\nEn RStudio:\nFile → New Project → New Directory → Quarto Blog\nPara previsualizar el sitio, le damos Render, o ejecutamos:\n\n\nTerminal\nquarto preview\n\nR\nquarto::quarto_preview()"
+    "text": "Crear el blog\nEn RStudio:\nFile → New Project → New Directory → Quarto Blog\n\nPrevisualizar\nPara previsualizar el sitio, le damos Render, o ejecutamos:\n\n\nTerminal\nquarto preview\n\nR\nquarto::quarto_preview()"
   },
   {
     "objectID": "taller_quarto_blog.html#construir-el-sitio",
@@ -70,11 +77,11 @@
     "text": "Personalización\n_quarto.yml tiene las configuraciones generales:\n\n\nTema\nformat:\n  html:\n    theme:\n      - minty\n      - tema.scss\nVer lista de temas\n\nMenús\nwebsite:\n  ...\n  navbar:\n    left: \n      - blog.qmd\n    right:\n\nDescripción\nwebsite:\n  title: \"Blogcito\"\n  description: \"Muy lindo\""
   },
   {
-    "objectID": "taller_quarto_blog.html#publicando-con-github-pages",
-    "href": "taller_quarto_blog.html#publicando-con-github-pages",
+    "objectID": "taller_quarto_blog.html#publicar-en-github-pages",
+    "href": "taller_quarto_blog.html#publicar-en-github-pages",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "Publicando con GitHub Pages",
-    "text": "Publicando con GitHub Pages\n\nCrea un repositorio en GitHub\nSube tu proyecto: git push\nEn el YAML, agrega:\n\n_quarto.yml\nproject:\n  type: website\n  output-dir: docs\n.nojekyll\n\nEn GitHub → Settings → Pages → selecciona la rama y carpeta docs\n¡Tu blog está en línea! 🎉"
+    "section": "Publicar en GitHub Pages",
+    "text": "Publicar en GitHub Pages\n\nCrea un repositorio en GitHub\nSube tu proyecto: git push\nEn el YAML, agrega:\n\n_quarto.yml\nproject:\n  type: website\n  output-dir: docs\n.nojekyll\n\nEn GitHub → Settings → Pages → selecciona la rama y carpeta docs\n¡Tu blog está en línea! 🎉"
   },
   {
     "objectID": "taller_quarto_blog.html#junta",

@@ -6,8 +6,8 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
 
   <title>Crea tu propia página web con Quarto y R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -97,7 +97,7 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-f37d9ee48b58e686f462acb1ab7f3e09.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0e5e1e0170b1af9574a8dc479271e584.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -205,8 +205,8 @@
 <section id="qué-haremos-hoy" class="slide level2">
 <h2>¿Qué haremos hoy?</h2>
 <ul>
-<li>Crear un blog desde cero con <strong>Quarto</strong> desde <strong>RStudio</strong></li>
-<li>Personalizar la apariencia del blog</li>
+<li><a href="https://quarto.org/docs/websites/">Crear un sitio web</a> desde cero con <strong>Quarto</strong> desde <strong>RStudio</strong></li>
+<li>Personalizar la apariencia del sitio</li>
 <li>Escribir tu primera publicación!</li>
 <li>Agregar código de R a tus publicaciones</li>
 <li>Subir el blog a un repositorio <strong>Github</strong></li>
@@ -230,10 +230,17 @@
 <p><strong>Quarto → cualquier formato!</strong></p>
 </div></div>
 </section>
-<section id="por-qué-un-blog" class="slide level2">
-<h2>¿Por qué un blog?</h2>
+<section id="por-qué-crear-un-blog" class="slide level2">
+<h2>¿Por qué crear un blog?</h2>
 <p>Tu blog es tu espacio en la internet.</p>
-<p>::: - Unificar tu <strong>presencia digital</strong> - <strong>Aprender</strong> haciendo - <strong>Compartir</strong> proyectos, análisis y aprendizajes - Construir tu <strong>portafolio</strong> profesional - Conectar con la <strong>comunidad</strong> :::</p>
+<p>Te servirá para:</p>
+<ul>
+<li>Unificar tu <strong>presencia digital</strong></li>
+<li><strong>Aprender</strong> haciendo</li>
+<li><strong>Compartir</strong> proyectos, análisis y aprendizajes</li>
+<li>Construir tu <strong>portafolio</strong> profesional</li>
+<li>Conectar con la <strong>comunidad</strong></li>
+</ul>
 <p>Si subes cosas a tu blog es más fácil que podamos compartirlas para que lleguen a mayor público 😉</p>
 </section>
 <section id="ejemplos" class="slide level2">
@@ -275,10 +282,21 @@
 <p>Repositorio y plataforma de publicación</p>
 </div></div>
 </section>
+<section id="tutoriales" class="slide level2">
+<h2>Tutoriales</h2>
+<ul>
+<li><a href="https://quarto.org/docs/websites/">Creating a Website</a>, tutorial oficial de Quarto</li>
+<li><a href="https://andrewheiss.github.io/quarto-websites_2025-10/">Create an Online Presence with Quarto Websites</a>, tutorial por <a href="https://www.andrewheiss.com">Andrew Heiss</a></li>
+<li><a href="https://estadisticaun.github.io/ManualQuarto/blog.html">Manual de Quarto</a>, sitio de la Universidad Nacional de Colombia</li>
+<li><a href="https://bastianolea.rbind.io/blog/tutorial_quarto_github_pages/">Crea páginas web y blogs con R+Quarto, y publícalos online con GitHub Pages</a>, tutorial por Bastián Olea</li>
+</ul>
+</section>
 <section id="crear-el-blog" class="slide level2">
 <h2>Crear el blog</h2>
 <p>En <strong>RStudio</strong>:</p>
 <p><strong>File → New Project → New Directory → Quarto Blog</strong></p>
+<p><br></p>
+<h3 id="previsualizar">Previsualizar</h3>
 <p>Para previsualizar el sitio, le damos <em>Render</em>, o ejecutamos:</p>
 <div class="columns">
 <div class="column">
@@ -386,6 +404,7 @@
 <section class="slide level2">
 
 <h3 id="personalización-avanzada">Personalización avanzada</h3>
+<p>En el <code>_quarto.yml</code> podemos cambiar variables para personalizar el sitio:</p>
 <ul>
 <li><p>Barra de navegación: <code>$navbar-bg</code> y <code>$navbar-fg</code></p></li>
 <li><p>Cuerpo del sitio: <code>$body-bg</code>, <code>$body-color</code> y <code>$link-color</code></p></li>
@@ -399,6 +418,7 @@
 <h3 id="tipografías">Tipografías</h3>
 <p>Buscar tipografías en <a href="https://fonts.google.com">Google Fonts</a></p>
 <p><strong>Get font → Get embed font → <span class="citation" data-cites="import">@import</span></strong></p>
+<p>Luego, en el CSS:</p>
 <h4 id="importar">Importar</h4>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h4 id="aplicar">Aplicar</h4>
@@ -413,13 +433,14 @@
 <section class="slide level2">
 
 <h4 id="otros-tutoriales">Otros tutoriales</h4>
+<p>Para más información sobre crear y personalizar tus sitios web, revisa estos tutoriales:</p>
 <ul>
 <li><a href="https://andrewheiss.github.io/quarto-websites_2025-10/materials/brand/">Andrew Heiss</a></li>
-<li><h2 id="damien-dupré"><a href="https://damien-dupre.github.io/BAA1028/lectures/lecture_7#/title-slide">Damien Dupré</a></h2></li>
+<li><a href="https://damien-dupre.github.io/BAA1028/lectures/lecture_7#/title-slide">Damien Dupré</a></li>
 </ul>
 </section>
-<section id="publicando-con-github-pages" class="slide level2">
-<h2>Publicando con GitHub Pages</h2>
+<section id="publicar-en-github-pages" class="slide level2">
+<h2>Publicar en GitHub Pages</h2>
 <ol type="1">
 <li>Crea un repositorio en GitHub</li>
 <li>Sube tu proyecto: <code>git push</code></li>

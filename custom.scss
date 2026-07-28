@@ -7,25 +7,19 @@ $acento:    #E3477B;
 $detalle:  #F0AABF;
 $letras:  #FFDCEE;
 
-$body-bg:                        $fondo;
-$body-color:                     $letras;
-$link-color:                     $acento;
+$body-bg: $fondo;
+$body-color: $letras;
+$link-color: $acento;
 $font-family-sans-serif: 'Livvic', sans-serif;
-$presentation-heading-color:     $letras;
+$presentation-heading-color: $letras;
 $presentation-heading-font-weight: 700;
-$presentation-h1-font-size:      2.4em;
-$presentation-h2-font-size:      1.5em;
-$code-color:                     $detalle;
-$code-bg:                        rgba(255,255,255,0.1);
+$presentation-h1-font-size: 2.4em;
+$presentation-h2-font-size: 1.5em;
+$code-color: $detalle;
+$code-bg: rgba(255,255,255,0.1);
+$presentation-font-size-root: 32px; // 40px;
 
 /*-- scss:rules --*/
-
-// --- Espacio superior para imagen arcoiris en diapositiva de título ---
-.reveal .slides section.title-slide {
-  padding-top: 17%;
-  box-sizing: border-box;
-}
-
 
 h1 {
   color: $letras !important;
@@ -54,6 +48,7 @@ h4 {
   margin-top: 0.5em !important;
 }
 
+/*
 // listas
 .reveal ul {
   list-style: none;
@@ -72,6 +67,7 @@ h4 {
   flex-shrink: 0;
   width: 1.2em;
 }
+*/
 
 // pie de página
 .reveal .footer > * {
@@ -117,10 +113,11 @@ code span.co {
   strong {
     color: $letras !important;
   }
-  
+  /*
   ul li::before {
     color: $letras !important;
   }
+  */
   
   a {
   color: $letras !important;
@@ -130,4 +127,10 @@ code span.co {
 .centrar {
   text-align: center; 
   padding-top: 1em;
+}
+
+// espacio superior para imagen arcoiris en diapositiva de título
+.reveal .slides section.title-slide {
+  padding-top: 17%;
+  box-sizing: border-box;
 }
