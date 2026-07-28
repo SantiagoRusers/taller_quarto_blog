@@ -50,7 +50,9 @@ h1, h2 {
   margin-bottom: 0.7em !important;
 }
 
-
+h4 {
+  margin-top: 0.5em !important;
+}
 
 // listas
 .reveal ul {
@@ -58,13 +60,17 @@ h1, h2 {
   padding-left: 0;
 }
 
+.reveal ul li {
+  display: flex;
+  align-items: flex-start;
+}
+
 .reveal ul li::before {
   content: '●';
   color: $acento;
   font-weight: bold;
-  display: inline-block;
+  flex-shrink: 0;
   width: 1.2em;
-  margin-left: 0;
 }
 
 // pie de página

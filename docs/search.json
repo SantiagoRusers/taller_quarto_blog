@@ -4,7 +4,7 @@
     "href": "taller_quarto_blog.html#qué-haremos-hoy",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "¿Qué haremos hoy?",
-    "text": "¿Qué haremos hoy?\n::: - Crear un blog desde cero con Quarto desde RStudio - Personalizar la apariencia del blog - Escribir tu primera publicación! - Agregar código de R a tus publicaciones - Subir el blog a un repositorio Github - Publicarlo en la web con GitHub Pages - Conversar sobre R al final! :::"
+    "text": "¿Qué haremos hoy?\n\nCrear un blog desde cero con Quarto desde RStudio\nPersonalizar la apariencia del blog\nEscribir tu primera publicación!\nAgregar código de R a tus publicaciones\nSubir el blog a un repositorio Github\nPublicarlo en la web con GitHub Pages\nConversar sobre R al final!"
   },
   {
     "objectID": "taller_quarto_blog.html#qué-es-quarto",
@@ -25,7 +25,7 @@
     "href": "taller_quarto_blog.html#ejemplos",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Ejemplos",
-    "text": "Ejemplos\nAlgunos sitios web hechos con Quarto:\n\nsantiagorusers.github.io\nquarto.org\nnrennie.rbind.io\nalejandroromerog.github.io\nemilhvitfeldt.com\nbrodrigues.co\nkaraman.is\nandrewheiss.com\nellakaye.co.uk\nrainbowr.org"
+    "text": "Ejemplos\nAlgunos sitios web hechos con Quarto:\n\n\n\nsantiagorusers.github.io\nquarto.org\nnrennie.rbind.io\nemilhvitfeldt.com\nbrodrigues.co\n\n\n\nkaraman.is\nandrewheiss.com\nellakaye.co.uk\nrainbowr.org\nalejandroromerog.github.io"
   },
   {
     "objectID": "taller_quarto_blog.html#herramientas-que-usaremos",
@@ -39,14 +39,14 @@
     "href": "taller_quarto_blog.html#crear-el-blog",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Crear el blog",
-    "text": "Crear el blog\nEn RStudio:\nFile → New Project → New Directory → Quarto Blog"
+    "text": "Crear el blog\nEn RStudio:\nFile → New Project → New Directory → Quarto Blog\nPara previsualizar el sitio, le damos Render, o ejecutamos:\n\n\nTerminal\nquarto preview\n\nR\nquarto::quarto_preview()"
   },
   {
-    "objectID": "taller_quarto_blog.html#elementos-de-un-blog-quarto",
-    "href": "taller_quarto_blog.html#elementos-de-un-blog-quarto",
+    "objectID": "taller_quarto_blog.html#construir-el-sitio",
+    "href": "taller_quarto_blog.html#construir-el-sitio",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "Elementos de un blog Quarto",
-    "text": "Elementos de un blog Quarto\nAl crear el blog, tendremos estos elementos en la carpeta/proyecto:\n\n_quarto.yml: archivo de configuración general\nindex.qmd: página principal del sitio1\nabout.qmd: página de “sobre ti”\n{x}.qmd: otras páginas para nuestro sitio web\nposts/: carpeta con las publicaciones del blog\ncustom.scss: hoja de estilos para personalizar el blog\n\nen un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta"
+    "section": "Construir el sitio",
+    "text": "Construir el sitio\nPara construir el sitio:\n\n\nTerminal\nquarto render\n\nR\nquarto::quarto_render()\n\nEsto hace que Quarto renderice todos los archivos para generar el sitio HTML en la carpeta _site (por defecto, después la cambiaremos a docs)"
   },
   {
     "objectID": "taller_quarto_blog.html#estructura-de-un-blog-en-quarto",
@@ -60,21 +60,21 @@
     "href": "taller_quarto_blog.html#publicaciones",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Publicaciones",
-    "text": "Publicaciones\nCrea un documento index.qmd en una carpeta dentro de posts, o usa quarto::new_blog_post(\"Título\")\nLuego rellena el encabezado yaml de la publicación:\n---\ntitle: \"Mi primer análisis en R\"\nsubtitle: \"Serie de análisis de datos\"\nauthor: \"Tu nombre\"\ndate: \"2026-07-29\"\ncategories: [R, análisis, datos]\nimage: \"imagen.jpeg\"\n---\nEl contenido se escribe en Markdown, en HTML, y en bloques de código R."
+    "text": "Publicaciones\nCrea un documento index.qmd en una carpeta dentro de posts, o ejecutamos quarto::new_blog_post(\"Título\")\nLuego rellena el encabezado yaml de la publicación:\n---\ntitle: \"Mi primer análisis en R\"\nsubtitle: \"Serie de análisis de datos\"\nauthor: \"Tu nombre\"\ndate: \"2026-07-29\"\ncategories: [R, análisis, datos]\nimage: \"imagen.jpeg\"\n---\nEl contenido se escribe en Markdown, en HTML, y en bloques de código R."
   },
   {
     "objectID": "taller_quarto_blog.html#personalización",
     "href": "taller_quarto_blog.html#personalización",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Personalización",
-    "text": "Personalización\nEdita _quarto.yml para cambiar:\n\nTema visual → theme: cosmo (o cualquiera de Bootswatch)\nNombre y descripción del sitio\nBarra de navegación y links\nColores y fuentes con CSS personalizado"
+    "text": "Personalización\n_quarto.yml tiene las configuraciones generales:\n\n\nTema\nformat:\n  html:\n    theme:\n      - minty\n      - tema.scss\nVer lista de temas\n\nMenús\nwebsite:\n  ...\n  navbar:\n    left: \n      - blog.qmd\n    right:\n\nDescripción\nwebsite:\n  title: \"Blogcito\"\n  description: \"Muy lindo\""
   },
   {
     "objectID": "taller_quarto_blog.html#publicando-con-github-pages",
     "href": "taller_quarto_blog.html#publicando-con-github-pages",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Publicando con GitHub Pages",
-    "text": "Publicando con GitHub Pages\n\nCrea un repositorio en GitHub\nSube tu proyecto: git push\nEn el YAML, agrega:\n\nproject:\n  type: website\n  output-dir: docs\n\nEn GitHub → Settings → Pages → selecciona la rama y carpeta docs\n¡Tu blog está en línea! 🎉"
+    "text": "Publicando con GitHub Pages\n\nCrea un repositorio en GitHub\nSube tu proyecto: git push\nEn el YAML, agrega:\n\n_quarto.yml\nproject:\n  type: website\n  output-dir: docs\n.nojekyll\n\nEn GitHub → Settings → Pages → selecciona la rama y carpeta docs\n¡Tu blog está en línea! 🎉"
   },
   {
     "objectID": "taller_quarto_blog.html#junta",

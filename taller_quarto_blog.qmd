@@ -20,7 +20,6 @@ execute:
 
 ## ¿Qué haremos hoy?
 
-:::
 - Crear un blog desde cero con **Quarto** desde **RStudio**
 - Personalizar la apariencia del blog
 - Escribir tu primera publicación!
@@ -28,7 +27,6 @@ execute:
 - Subir el blog a un repositorio **Github**
 - Publicarlo en la web con **GitHub Pages**
 - Conversar sobre R al final!
-:::
 
 ---
 
@@ -75,16 +73,22 @@ Si subes cosas a tu blog es más fácil que podamos compartirlas para que llegue
 
 Algunos sitios web hechos con Quarto:
 
+:::: {.columns}
+::: {.column}
 - [santiagorusers.github.io](https://santiagorusers.github.io/)
 - [quarto.org](https://quarto.org)
 - [nrennie.rbind.io](https://nrennie.rbind.io)
-- [alejandroromerog.github.io](https://alejandroromerog.github.io)
 - [emilhvitfeldt.com](https://emilhvitfeldt.com)
 - [brodrigues.co](https://brodrigues.co)
+:::
+::: {.column}
 - [karaman.is](https://karaman.is)
 - [andrewheiss.com](https://www.andrewheiss.com/blog/)
 - [ellakaye.co.uk](https://ellakaye.co.uk)
 - [rainbowr.org](https://rainbowr.org)
+- [alejandroromerog.github.io](https://alejandroromerog.github.io)
+:::
+::::
 
 ---
 
@@ -124,12 +128,45 @@ En **RStudio**:
 
 **File → New Project → New Directory → Quarto Blog**
 
+Para previsualizar el sitio, le damos _Render_, o ejecutamos:
+
+:::: {.columns}
+
+::: {.column}
+#### Terminal 
+`quarto preview` 
+:::
+
+::: {.column}
+#### R
+`quarto::quarto_preview()`
+:::
+::::
 
 ---
 
-## Elementos de un blog Quarto
+## Construir el sitio
 
-Al crear el blog, tendremos estos elementos en la carpeta/proyecto:
+Para construir el sitio: 
+
+:::: {.columns}
+
+::: {.column}
+### Terminal 
+`quarto render` 
+:::
+
+::: {.column}
+### R
+`quarto::quarto_render()`
+:::
+::::
+
+Esto hace que Quarto renderice todos los archivos para generar el sitio HTML en la carpeta `_site` (por defecto, después la cambiaremos a `docs`)
+
+---
+
+### Elementos de un blog Quarto
 
 - `_quarto.yml`: archivo de configuración general
 - `index.qmd`: página principal del sitio[^1]
@@ -163,7 +200,7 @@ Cada documento `.qmd` es una página del sitio. Cada documento `.qmd` dentro de 
 
 ## Publicaciones
 
-Crea un documento `index.qmd` en una carpeta dentro de `posts`, o usa `quarto::new_blog_post("Título")`
+Crea un documento `index.qmd` en una carpeta dentro de `posts`, o ejecutamos `quarto::new_blog_post("Título")`
 
 Luego rellena el encabezado `yaml` de la publicación:
 
@@ -203,29 +240,108 @@ Agregar una nota al pie[^1].
 
 ## Personalización
 
-Edita `_quarto.yml` para cambiar:
+`_quarto.yml` tiene las configuraciones generales:
 
-- **Tema visual** → `theme: cosmo` (o cualquiera de Bootswatch)
-- **Nombre y descripción** del sitio
-- **Barra de navegación** y links
-- **Colores y fuentes** con CSS personalizado
+:::: {.columns}
+::: {.column}
+#### [Tema](https://quarto.org/docs/output-formats/html-themes.html)
+```yaml
+format:
+  html:
+    theme:
+      - minty
+      - tema.scss
+```
+Ver lista de [temas](https://bootswatch.com)
+::: 
+::: {.column}
+#### [Menús](https://quarto.org/docs/websites/website-navigation.html#overview)
+```yaml
+website:
+  ...
+  navbar:
+    left: 
+      - blog.qmd
+    right:
+```
+:::
+::: {.column}
+#### [Descripción](https://quarto.org/docs/websites/#config-file)
+```yaml
+website:
+  title: "Blogcito"
+  description: "Muy lindo"
+```
+:::
+::::
 
 ---
 
-## Publicando con GitHub Pages
+### Personalización avanzada
+
+- Barra de navegación: `$navbar-bg` y `$navbar-fg`
+- Cuerpo del sitio: `$body-bg`, `$body-color` y `$link-color`
+- Detalles como `$input-bg`, `$toc-color`, `$popover-bg`, `$footer-bg`...
+
+- [Variables SASS más frecuentes](https://quarto.org/docs/output-formats/html-themes.html#sass-variables)
+- [Todas las variables SASS](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
+
+---
+
+### Tipografías
+
+Buscar tipografías en [Google Fonts](https://fonts.google.com)
+
+**Get font → Get embed font → @import**
+
+#### Importar
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0');
+```
+
+#### Aplicar
+
+```css
+h1, h2, h3, h4, h5 {
+  font-family: "Libre Baskerville", serif;
+}
+
+body {
+   font-family: "Work Sans", sans-serif;
+}
+```
+---
+
+#### Otros tutoriales
+
+Para más información sobre crear y personalizar tus sitios web, revisa estos tutoriales:
+
+- [Andrew Heiss](https://andrewheiss.github.io/quarto-websites_2025-10/materials/brand/)
+- [Damien Dupré](https://damien-dupre.github.io/BAA1028/lectures/lecture_7#/title-slide)
+
+---
+
+
+## Publicar en GitHub Pages
 
 1. Crea un repositorio en GitHub
 2. Sube tu proyecto: `git push`
 3. En el YAML, agrega:
 
+`_quarto.yml`
 ```yaml
 project:
   type: website
   output-dir: docs
 ```
 
+`.nojekyll`
+
 4. En GitHub → Settings → Pages → selecciona la rama y carpeta `docs`
 5. ¡Tu blog está en línea! 🎉
+
+
 
 
 ---
