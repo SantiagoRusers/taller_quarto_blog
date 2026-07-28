@@ -463,6 +463,23 @@
 </section>
 <section class="slide level2">
 
+<h3 id="qué-es-git">¿Qué es Git?</h3>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:15%;">
+<p><img data-src="img/logo_git.png" style="width:100.0%"></p>
+</div><div class="column" style="width:85%;">
+<p><a href="https://git-scm.com">Git</a> te permite llevar un registro de versiones y un control de cambios en tu código.</p>
+</div></div>
+<div class="columns">
+<div class="column" style="width:15%;">
+<p><img data-src="img/logo-github.png" style="width:100.0%"></p>
+</div><div class="column" style="width:85%;">
+<p><a href="https://github.com">GitHub</a> sirve para subir repositorios a un servicio online, en el cual puedes compartir tu código con otras personas, descargar el código de otros, y colaborar.</p>
+</div></div>
+</section>
+<section class="slide level2">
+
 <h3 id="configurar-git">Configurar Git</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Configurar cuenta y crear un <em>token</em></p>
@@ -489,14 +506,22 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource git number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>git add .</span>
 <span id="cb16-2"><a></a>git commit -m "cambios en el blog"</span>
 <span id="cb16-3"><a></a>git push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><a href="https://happygitwithr.com">Tutorial completo sobre usar Git en R</a></p>
+<ul>
+<li><a href="https://happygitwithr.com">Tutorial completo sobre usar Git en R</a></li>
+<li><a href="https://bastianolea.rbind.io/blog/tutorial_github/">Tutorial breve sobre uso de R con GitHub</a></li>
+</ul>
 </section>
 <section id="subir-a-github-pages" class="slide level2">
 <h2>Subir a GitHub Pages</h2>
+<p>Para que el repositorio se publique en la web con una dirección <code>github.io</code>, debemos configurarlo:</p>
 <h3 id="configurar-github-pages">Configurar GitHub Pages</h3>
-<p>En el repositorio de GitHub: <strong>Settings</strong> → <strong>Pages</strong></p>
-<p>Selecciona la rama y carpeta <code>docs</code></p>
-<p>Esperar a que se suba! 🤞🏼</p>
+<ol type="1">
+<li>En el repositorio de GitHub con tu sitio: <strong>Settings → Pages</strong></li>
+<li>Selecciona la rama y carpeta <code>docs</code></li>
+<li>Esperar a que se suba! 🤞🏼</li>
+<li>Edita la barra lateral del repo para poner el enlace</li>
+</ol>
+<p>Cada vez que subas un <em>commit</em> al repositorio, el sitio se actualizará solito después de unos minutos!</p>
 <p><a href="https://quarto.org/docs/publishing/github-pages.html">Tutorial de GitHub Pages</a></p>
 </section>
 <section id="junta" class="slide level2 destacado">

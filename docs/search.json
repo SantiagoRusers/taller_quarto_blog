@@ -88,7 +88,7 @@
     "href": "taller_quarto_blog.html#subir-a-github-pages",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Subir a GitHub Pages",
-    "text": "Subir a GitHub Pages\nConfigurar GitHub Pages\nEn el repositorio de GitHub: Settings → Pages\nSelecciona la rama y carpeta docs\nEsperar a que se suba! 🤞🏼\nTutorial de GitHub Pages"
+    "text": "Subir a GitHub Pages\nPara que el repositorio se publique en la web con una dirección github.io, debemos configurarlo:\nConfigurar GitHub Pages\n\nEn el repositorio de GitHub con tu sitio: Settings → Pages\nSelecciona la rama y carpeta docs\nEsperar a que se suba! 🤞🏼\nEdita la barra lateral del repo para poner el enlace\n\nCada vez que subas un commit al repositorio, el sitio se actualizará solito después de unos minutos!\nTutorial de GitHub Pages"
   },
   {
     "objectID": "taller_quarto_blog.html#junta",

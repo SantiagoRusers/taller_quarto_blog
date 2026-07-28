@@ -369,6 +369,30 @@ project:
 
 ---
 
+### ¿Qué es Git?
+
+<br>
+
+:::: {.columns}
+::: {.column width="15%"}
+![](img/logo_git.png){width="100%"}
+:::
+::: {.column width="85%"}
+[Git](https://git-scm.com) te permite llevar un registro de versiones y un control de cambios en tu código.
+:::
+::::
+
+:::: {.columns}
+::: {.column width="15%"}
+![](img/logo-github.png){width="100%"}
+:::
+::: {.column width="85%"}
+[GitHub](https://github.com) sirve para subir repositorios a un servicio online, en el cual puedes compartir tu código con otras personas, descargar el código de otros, y colaborar.
+:::
+::::
+
+---
+
 ### Configurar Git
 
 ```r
@@ -389,6 +413,7 @@ Confirmar situación:
 ```r
 usethis::git_sitrep()
 ```
+
 ---
 
 ### Crear un repositorio local
@@ -415,20 +440,24 @@ git commit -m "cambios en el blog"
 git push
 ```
 
-[Tutorial completo sobre usar Git en R](https://happygitwithr.com)
+- [Tutorial completo sobre usar Git en R](https://happygitwithr.com)
+- [Tutorial breve sobre uso de R con GitHub](https://bastianolea.rbind.io/blog/tutorial_github/)
 
 ---
 
 
 ## Subir a GitHub Pages
 
+Para que el repositorio se publique en la web con una dirección `github.io`, debemos configurarlo:
+
 ### Configurar GitHub Pages
 
-En el repositorio de GitHub: **Settings** → **Pages**
+1. En el repositorio de GitHub con tu sitio: **Settings → Pages**
+2. Selecciona la rama y carpeta `docs`
+3. Esperar a que se suba! 🤞🏼
+4. Edita la barra lateral del repo para poner el enlace
 
-Selecciona la rama y carpeta `docs`
-
-Esperar a que se suba! 🤞🏼
+Cada vez que subas un _commit_ al repositorio, el sitio se actualizará solito después de unos minutos!
 
 [Tutorial de GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
 
