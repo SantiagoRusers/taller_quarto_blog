@@ -421,31 +421,48 @@
 </section>
 <section class="slide level2">
 
-<h3 id="tipografías">Tipografías</h3>
-<p>Buscar tipografías en <a href="https://fonts.google.com">Google Fonts</a></p>
-<p><strong>Get font → Get embed font → <span class="citation" data-cites="import">@import</span></strong></p>
-<p>Luego, en el CSS:</p>
-<h4 id="importar">Importar</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h4 id="aplicar">Aplicar</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a></a>$font-family-sans-serif<span class="in">:</span> "Raleway"<span class="op">,</span> sans-serif;</span>
-<span id="cb10-2"><a></a></span>
-<span id="cb10-3"><a></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5 {</span>
-<span id="cb10-4"><a></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Raleway"</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb10-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="personalización-avanzada">Personalización avanzada</h3>
+<p>Si ponemos un archivo <code>.scss</code> como tema en <code>_quarto.yml</code> podemos personalizar el sitio usando variables:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource scss number-lines code-with-copy"><code class="sourceCode scss"><span id="cb9-1"><a></a><span class="co">/*-- scss:defaults --*/</span></span>
+<span id="cb9-2"><a></a><span class="va">$primary</span>: <span class="cn">#b0c4b1</span><span class="op">;</span></span>
+<span id="cb9-3"><a></a><span class="va">$secondary</span>: <span class="cn">#4a5759</span><span class="op">;</span></span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a><span class="co">/* principales */</span></span>
+<span id="cb9-6"><a></a><span class="va">$body-bg</span>: <span class="cn">#dedbd2</span><span class="op">;</span> <span class="co">// fondo</span></span>
+<span id="cb9-7"><a></a><span class="va">$body-color</span>: <span class="cn">#4a5759</span><span class="op">;</span> <span class="co">// texto</span></span>
+<span id="cb9-8"><a></a><span class="va">$link-color</span>: <span class="cn">#b0c4b1</span><span class="op">;</span> <span class="co">// enlaces</span></span>
+<span id="cb9-9"><a></a><span class="va">$border-color</span>: <span class="cn">#C7C3B7</span><span class="op">;</span> <span class="co">// líneas</span></span>
+<span id="cb9-10"><a></a><span class="va">$code-block-bg</span>: <span class="cn">#C7C3B7</span><span class="op">;</span> <span class="co">// fondo de código</span></span>
+<span id="cb9-11"><a></a></span>
+<span id="cb9-12"><a></a><span class="co">/* barra de navegación */</span></span>
+<span id="cb9-13"><a></a><span class="va">$navbar-bg</span>: <span class="cn">#4a5759</span><span class="op">;</span><span class="co">// fondo</span></span>
+<span id="cb9-14"><a></a><span class="va">$navbar-fg</span>: <span class="cn">#dedbd2</span><span class="op">;</span><span class="co">// texto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
-<h3 id="personalización-avanzada">Personalización avanzada</h3>
-<p>En el <code>.scss</code> podemos cambiar variables para personalizar el sitio:</p>
+<h4 id="más-personalización">Más personalización</h4>
 <ul>
-<li><p>Barra de navegación: <code>$navbar-bg</code> y <code>$navbar-fg</code></p></li>
-<li><p>Cuerpo del sitio: <code>$body-bg</code>, <code>$body-color</code> y <code>$link-color</code>,</p></li>
 <li><p>Tamaños de texto: <code>$font-size-root</code>, <code>$h1-font-size</code>, <code>$h2-font-size</code>, <code>$line-height-base</code>,</p></li>
 <li><p>Detalles como <code>$input-bg</code>, <code>$toc-color</code>, <code>$popover-bg</code>, <code>$footer-bg</code>…</p></li>
 <li><p><a href="https://quarto.org/docs/output-formats/html-themes.html#sass-variables">Variables SASS más frecuentes</a></p></li>
 <li><p><a href="https://rstudio.github.io/bslib/articles/bs5-variables/index.html">Todas las variables SASS</a></p></li>
 </ul>
+<p>Obviamente podemos cambiar cualquier elemento del sitio con <strong>CSS</strong> con la ayuda del inspector de nuestro navegador web</p>
+</section>
+<section class="slide level2">
+
+<h3 id="tipografías">Tipografías</h3>
+<p>Buscar tipografías en <a href="https://fonts.google.com">Google Fonts</a></p>
+<p><strong>Get font → Get embed font → <span class="citation" data-cites="import">@import</span></strong></p>
+<p>Luego, en el CSS:</p>
+<h4 id="importar">Importar</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h4 id="aplicar">Aplicar</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a></a>$font-family-sans-serif<span class="in">:</span> "Raleway"<span class="op">,</span> sans-serif;</span>
+<span id="cb11-2"><a></a></span>
+<span id="cb11-3"><a></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5 {</span>
+<span id="cb11-4"><a></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Raleway"</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb11-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -475,9 +492,9 @@
 <div class="columns">
 <div class="column">
 <p>Para construir el sitio en una <strong>carpeta</strong> compatible con GitHub Pages, cambiar en <code>_quarto.yml</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb11-2"><a></a><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb11-3"><a></a><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span><span class="co"> # cambiar carpeta donde se construye el sitio</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb12-2"><a></a><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb12-3"><a></a><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span><span class="co"> # cambiar carpeta donde se construye el sitio</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Luego puedes borrar la carpeta <code>_site</code></p>
 </div><div class="column">
 <p>Agregar un <strong>archivo vacío</strong> llamado <code>.nojekyll</code> al proyecto, para que GitHub Pages no intente cambiarle cosas por su propia cuenta.</p>
@@ -504,31 +521,31 @@
 
 <h3 id="configurar-git">Configurar Git</h3>
 <p>Instalar <a href="https://usethis.r-lib.org">un paquete de R</a> que nos ayudará:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Configura tu cuenta y crea un <em>token</em> para autenticarla (en lugar de usar contraseñas)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"bastianolea"</span>, <span class="at">user.email =</span> <span class="st">"bastianolea@gmail.com"</span>)</span>
-<span id="cb13-2"><a></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"bastianolea"</span>, <span class="at">user.email =</span> <span class="st">"bastianolea@gmail.com"</span>)</span>
+<span id="cb14-2"><a></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Copia el <em>token</em> que te entrega, e ingrésalo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Confirmar la situación de Git en tu equipo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="crear-un-repositorio-local">Crear un repositorio local</h3>
 <p>Crear repositorio local para poder <strong>registrar los cambios</strong> a tu código (<code>git add</code>) y <strong>guardar versiones</strong> (<code>git commit</code>):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="crear-un-repositorio-remoto">Crear un repositorio remoto</h3>
 <p>Crear repositorio remoto donde podrás <strong>subir tus cambios</strong> (<code>git push</code>) a GitHub y así hacerlos públicos y tenerlos respaldados.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="resumen-de-git">Resumen de Git</h3>
 <p>Registrar cambios (<code>add</code>), <em>commit</em> cambios (<code>commit</code>), subir cambios (<code>push</code>)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource git number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>git add .</span>
-<span id="cb18-2"><a></a>git commit -m "cambios en el blog"</span>
-<span id="cb18-3"><a></a>git push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource git number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a></a>git add .</span>
+<span id="cb19-2"><a></a>git commit -m "cambios en el blog"</span>
+<span id="cb19-3"><a></a>git push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Trabajar → Registrar cambios → Guardar versión → Subir a GitHub</strong></p>
 <p><br> <br> <br></p>
 <ul>

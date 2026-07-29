@@ -314,6 +314,42 @@ website:
 
 ---
 
+### Personalización avanzada
+
+Si ponemos un archivo `.scss` como tema en `_quarto.yml` podemos personalizar el sitio usando variables:
+
+```scss
+/*-- scss:defaults --*/
+$primary: #b0c4b1;
+$secondary: #4a5759;
+
+/* principales */
+$body-bg: #dedbd2; // fondo
+$body-color: #4a5759; // texto
+$link-color: #b0c4b1; // enlaces
+$border-color: #C7C3B7; // líneas
+$code-block-bg: #C7C3B7; // fondo de código
+
+/* barra de navegación */
+$navbar-bg: #4a5759;// fondo
+$navbar-fg: #dedbd2;// texto
+```
+
+---
+
+#### Más personalización
+
+- Tamaños de texto: `$font-size-root`, `$h1-font-size`, `$h2-font-size`, `$line-height-base`,
+- Detalles como `$input-bg`, `$toc-color`, `$popover-bg`, `$footer-bg`...
+
+- [Variables SASS más frecuentes](https://quarto.org/docs/output-formats/html-themes.html#sass-variables)
+- [Todas las variables SASS](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
+
+Obviamente podemos cambiar cualquier elemento del sitio con **CSS** con la ayuda del inspector de nuestro navegador web
+
+----
+
+
 ### Tipografías
 
 Buscar tipografías en [Google Fonts](https://fonts.google.com)
@@ -340,19 +376,7 @@ h1, h2, h3, h4, h5 {
 
 ---
 
-### Personalización avanzada
 
-En el `.scss` podemos cambiar variables para personalizar el sitio:
-
-- Barra de navegación: `$navbar-bg` y `$navbar-fg`
-- Cuerpo del sitio: `$body-bg`, `$body-color` y `$link-color`, 
-- Tamaños de texto: `$font-size-root`, `$h1-font-size`, `$h2-font-size`, `$line-height-base`,
-- Detalles como `$input-bg`, `$toc-color`, `$popover-bg`, `$footer-bg`...
-
-- [Variables SASS más frecuentes](https://quarto.org/docs/output-formats/html-themes.html#sass-variables)
-- [Todas las variables SASS](https://rstudio.github.io/bslib/articles/bs5-variables/index.html)
-
----
 
 
 #### Otros tutoriales
