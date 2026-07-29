@@ -97,7 +97,7 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5575e693593a4c9f34eb78ffc829bd28.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-371df682d38209f4d771940fc4ee3bed.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -294,47 +294,9 @@
 </section>
 <section id="crear-el-blog" class="slide level2">
 <h2>Crear el blog</h2>
-<p>En <strong>RStudio</strong>:</p>
+<p>En <strong>RStudio:</strong></p>
 <p><strong>File → New Project → New Directory → Quarto Blog</strong></p>
-<p><br></p>
-<h3 id="previsualizar">Previsualizar</h3>
-<p>Para previsualizar el sitio, le damos <em>Render</em>, o ejecutamos:</p>
-<div class="columns">
-<div class="column">
-<h4 id="terminal">Terminal</h4>
-<p><code>quarto preview</code></p>
-</div><div class="column">
-<h4 id="r">R</h4>
-<p><code>quarto::quarto_preview()</code></p>
-</div></div>
-</section>
-<section id="construir-el-sitio" class="slide level2">
-<h2>Construir el sitio</h2>
-<p>Para construir el sitio:</p>
-<div class="columns">
-<div class="column">
-<h3 id="terminal-1">Terminal</h3>
-<p><code>quarto render</code></p>
-</div><div class="column">
-<h3 id="r-1">R</h3>
-<p><code>quarto::quarto_render()</code></p>
-</div></div>
-<p>Esto hace que Quarto renderice todos los archivos para generar el sitio HTML en la carpeta <code>_site</code> (por defecto, después la cambiaremos a <code>docs</code>)</p>
-</section>
-<section class="slide level2">
-
-<h3 id="elementos-de-un-blog-quarto">Elementos de un blog Quarto</h3>
-<ul>
-<li><code>_quarto.yml</code>: archivo de configuración general</li>
-<li><code>index.qmd</code>: página principal del sitio<sup>1</sup></li>
-<li><code>about.qmd</code>: página de “sobre ti”</li>
-<li><code>{x}.qmd</code>: otras páginas para nuestro sitio web</li>
-<li><code>posts/</code>: carpeta con las publicaciones del blog</li>
-<li><code>custom.scss</code>: hoja de estilos para personalizar el blog</li>
-</ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta</p></li></ol></aside></section>
-<section id="estructura-de-un-blog-en-quarto" class="slide level2">
-<h2>Estructura de un blog en Quarto</h2>
+<h3 id="estructura-del-blog">Estructura del blog</h3>
 <pre><code>mi-blog/
 ├── _quarto.yml        # configuración
 ├── index.qmd          # página principal
@@ -344,62 +306,115 @@
     │   └── index.qmd  # contenido
     └── segundo-post/
         └── index.qmd  # contenido</code></pre>
-<p>Cada documento <code>.qmd</code> es una página del sitio. Cada documento <code>.qmd</code> dentro de <code>posts</code> es una publicación del blog.</p>
-</section>
-<section id="publicaciones" class="slide level2">
-<h2>Publicaciones</h2>
-<p>Crea un documento <code>index.qmd</code> en una carpeta dentro de <code>posts</code>, o ejecutamos <code>quarto::new_blog_post("Título")</code></p>
-<p>Luego rellena el encabezado <code>yaml</code> de la publicación:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a></a><span class="pp">---</span></span>
-<span id="cb2-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mi primer análisis en R"</span></span>
-<span id="cb2-3"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Serie de análisis de datos"</span></span>
-<span id="cb2-4"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
-<span id="cb2-5"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-07-29"</span></span>
-<span id="cb2-6"><a></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">R</span><span class="kw">,</span><span class="at"> análisis</span><span class="kw">,</span><span class="at"> datos</span><span class="kw">]</span></span>
-<span id="cb2-7"><a></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"imagen.jpeg"</span></span>
-<span id="cb2-8"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>El contenido se escribe en <strong>Markdown</strong>, en <strong>HTML</strong>, y en bloques de <strong>código R</strong>.</p>
+<p>Cada documento <code>.qmd</code> es una página del sitio.</p>
 </section>
 <section class="slide level2">
 
-<h3 id="markdown">Markdown</h3>
-<p>Markdown es una sintaxis de marcado simple para dar estilo a textos a partir de texto plano. Se agregan símbolos en el texto, y al renderizarlo, se convertirá en texto HTML enriquecido.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a></a><span class="fu">## Subtítulos</span></span>
-<span id="cb3-2"><a></a><span class="fu">### Subsubtítulos</span></span>
-<span id="cb3-3"><a></a>**negrita**</span>
-<span id="cb3-4"><a></a>*itálica* o _itálica_</span>
-<span id="cb3-5"><a></a><span class="dt">&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>subrayado<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span></span>
-<span id="cb3-6"><a></a>~~tachado~~</span>
-<span id="cb3-7"><a></a><span class="in">`código`</span></span>
-<span id="cb3-8"><a></a><span class="co">[</span><span class="ot">Enlaces</span><span class="co">](http://www.enlace.cl)</span></span>
-<span id="cb3-9"><a></a>Agregar una nota al pie<span class="ot">[^1]</span>.</span>
-<span id="cb3-10"><a></a><span class="ot">[^1]: </span>Esta es una nota al pie</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="elementos-del-blog">Elementos del blog</h3>
+<ul>
+<li><code>_quarto.yml</code>: archivo de configuración general</li>
+<li><code>index.qmd</code>: página principal del sitio<sup>1</sup></li>
+<li><code>about.qmd</code>: página de “sobre ti”</li>
+<li><code>{x}.qmd</code>: otras páginas para nuestro sitio web</li>
+<li><code>posts/</code>: carpeta con las publicaciones del blog</li>
+<li><code>custom.scss</code>: hoja de estilos para personalizar el blog</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta</p></li></ol></aside></section>
+<section class="slide level2">
+
+<h3 id="publicaciones">Publicaciones</h3>
+<p>Para <strong>crear una nueva publicación</strong>, crea un documento <code>index.qmd</code> en una carpeta dentro de <code>posts</code>:</p>
+<pre><code>posts/mi_primer_post/index.qmd</code></pre>
+<p>También puedes hacerlo con <code>quarto::new_blog_post("Título")</code></p>
+<p>Luego rellena el encabezado (<code>yaml</code>) de la publicación:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a></a><span class="pp">---</span></span>
+<span id="cb3-2"><a></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mi primer análisis en R"</span></span>
+<span id="cb3-3"><a></a><span class="fu">subtitle</span><span class="kw">:</span><span class="at"> </span><span class="st">"Serie de análisis de datos"</span></span>
+<span id="cb3-4"><a></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
+<span id="cb3-5"><a></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2026-07-29"</span></span>
+<span id="cb3-6"><a></a><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">R</span><span class="kw">,</span><span class="at"> análisis</span><span class="kw">,</span><span class="at"> datos</span><span class="kw">]</span></span>
+<span id="cb3-7"><a></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"imagen.jpeg"</span></span>
+<span id="cb3-8"><a></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="personalización" class="slide level2">
-<h2>Personalización</h2>
+<section class="slide level2">
+
+<p>El contenido del blog se escribe con <strong>Markdown</strong>, con <strong>HTML</strong>, y con bloques de <strong>código R</strong>.</p>
+<h4 id="markdown">Markdown</h4>
+<p><strong>Markdown</strong> es una sintaxis de marcado simple para dar estilo a textos a partir de texto plano. Se agregan símbolos en el texto, y al renderizarlo, se convertirá en texto HTML enriquecido.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a></a><span class="fu">## Subtítulos</span></span>
+<span id="cb4-2"><a></a><span class="fu">### Subsubtítulos</span></span>
+<span id="cb4-3"><a></a>**negrita**</span>
+<span id="cb4-4"><a></a>*itálica* o _itálica_</span>
+<span id="cb4-5"><a></a><span class="dt">&lt;</span><span class="kw">u</span><span class="dt">&gt;</span>subrayado<span class="dt">&lt;/</span><span class="kw">u</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a></a>~~tachado~~</span>
+<span id="cb4-7"><a></a><span class="in">`código`</span></span>
+<span id="cb4-8"><a></a><span class="co">[</span><span class="ot">Enlaces</span><span class="co">](http://www.enlace.cl)</span></span>
+<span id="cb4-9"><a></a>Agregar una nota al pie<span class="ot">[^1]</span>.</span>
+<span id="cb4-10"><a></a><span class="ot">[^1]: </span>Esta es una nota al pie</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+
+<h4 id="bloques-de-código">Bloques de código</h4>
+<p>Para agregar elementos hechos con código a tu blog, como gráficos, tablas y más, crea un <strong>bloque</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-3"><a></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>En la primera línea puedes ponerles opciones:</p>
+<ul>
+<li><code>#| echo: false</code> para que no muestre el código</li>
+<li><code>#| eval: false</code> para mostrar código pero no ejecutarlo</li>
+<li><code>#| warning: false</code> para ocultar mensajes de alerta</li>
+<li><code>#| error: true</code> para mostrar ejemplos de errores</li>
+<li><code>#| fig-height: 7</code> alto de los gráficos</li>
+</ul>
+</section>
+<section id="construir-el-sitio" class="slide level2">
+<h2>Construir el sitio</h2>
+<p>Renderizar todos los archivos para generar el sitio en la carpeta <code>_site</code> (por defecto, después la cambiaremos a <code>docs</code>)</p>
+<div class="columns">
+<div class="column">
+<h4 id="terminal">Terminal</h4>
+<p><code>quarto render</code></p>
+</div><div class="column">
+<h4 id="r">R</h4>
+<p><code>quarto::quarto_render()</code></p>
+</div></div>
+<h3 id="previsualizar">Previsualizar</h3>
+<p>Para previsualizar el sitio, le damos <em>Render</em>, o ejecutamos:</p>
+<div class="columns">
+<div class="column">
+<h4 id="terminal-1">Terminal</h4>
+<p><code>quarto preview</code></p>
+</div><div class="column">
+<h4 id="r-1">R</h4>
+<p><code>quarto::quarto_preview()</code></p>
+</div></div>
+</section>
+<section id="personalización-del-sitio" class="slide level2">
+<h2>Personalización del sitio</h2>
 <p><code>_quarto.yml</code> tiene las configuraciones generales:</p>
 <div class="columns">
 <div class="column">
 <h4 id="tema"><a href="https://quarto.org/docs/output-formats/html-themes.html">Tema</a></h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb4-2"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb4-3"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb4-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> minty</span></span>
-<span id="cb4-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> tema.scss</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-3"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb6-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> minty</span></span>
+<span id="cb6-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> tema.scss</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ver lista de <a href="https://bootswatch.com">temas</a></p>
 </div><div class="column">
 <h4 id="menús"><a href="https://quarto.org/docs/websites/website-navigation.html#overview">Menús</a></h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb5-2"><a></a><span class="at">  ...</span></span>
-<span id="cb5-3"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb5-4"><a></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb5-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> blog.qmd</span></span>
-<span id="cb5-6"><a></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb7-2"><a></a><span class="at">  ...</span></span>
+<span id="cb7-3"><a></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb7-4"><a></a><span class="at">    </span><span class="fu">left</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb7-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> blog.qmd</span></span>
+<span id="cb7-6"><a></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <h4 id="descripción"><a href="https://quarto.org/docs/websites/#config-file">Descripción</a></h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb6-2"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Blogcito"</span></span>
-<span id="cb6-3"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Muy lindo"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb8-2"><a></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Blogcito"</span></span>
+<span id="cb8-3"><a></a><span class="at">  </span><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Muy lindo"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </section>
 <section class="slide level2">
@@ -409,15 +424,15 @@
 <p><strong>Get font → Get embed font → <span class="citation" data-cites="import">@import</span></strong></p>
 <p>Luego, en el CSS:</p>
 <h4 id="importar">Importar</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h4 id="aplicar">Aplicar</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5 {</span>
-<span id="cb8-2"><a></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Libre Baskerville"</span><span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
-<span id="cb8-3"><a></a>}</span>
-<span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a>body {</span>
-<span id="cb8-6"><a></a>   <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Work Sans"</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb8-7"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5 {</span>
+<span id="cb10-2"><a></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Libre Baskerville"</span><span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
+<span id="cb10-3"><a></a>}</span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a>body {</span>
+<span id="cb10-6"><a></a>   <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Work Sans"</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb10-7"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -456,9 +471,9 @@
 
 <h3 id="configurar-el-sitio-web">Configurar el sitio web</h3>
 <p><code>_quarto.yml</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb9-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb9-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb11-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb11-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>.nojekyll</code></p>
 </section>
 <section class="slide level2">
@@ -481,31 +496,34 @@
 <section class="slide level2">
 
 <h3 id="configurar-git">Configurar Git</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Configurar cuenta y crear un <em>token</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"bastianolea"</span>, <span class="at">user.email =</span> <span class="st">"bastianolea@gmail.com"</span>)</span>
-<span id="cb11-2"><a></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Copiar <em>token</em> e ingresarlo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Confirmar situación:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Instalar <a href="https://usethis.r-lib.org">un paquete de R</a> que nos ayudará:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Configura tu cuenta y crea un <em>token</em> para autenticarla (en lugar de usar contraseñas)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"bastianolea"</span>, <span class="at">user.email =</span> <span class="st">"bastianolea@gmail.com"</span>)</span>
+<span id="cb13-2"><a></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Copia el <em>token</em> que te entrega, e ingrésalo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Confirmar la situación de Git en tu equipo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="crear-un-repositorio-local">Crear un repositorio local</h3>
-<p>Crear repositorio local:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Crear repositorio local para poder <strong>registrar los cambios</strong> a tu código (<code>git add</code>) y <strong>guardar versiones</strong> (<code>git commit</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="crear-un-repositorio-remoto">Crear un repositorio remoto</h3>
-<p>Crear repositorio remoto</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Crear repositorio remoto donde podrás <strong>subir tus cambios</strong> (<code>git push</code>) a GitHub y así hacerlos públicos y tenerlos respaldados.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
-<h4 id="resumen-de-git">Resumen de Git</h4>
-<p>Registrar cambios (<code>add</code>), <em>commit</em> cambios, subir cambios (<code>push</code>)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource git number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a></a>git add .</span>
-<span id="cb16-2"><a></a>git commit -m "cambios en el blog"</span>
-<span id="cb16-3"><a></a>git push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="resumen-de-git">Resumen de Git</h3>
+<p>Registrar cambios (<code>add</code>), <em>commit</em> cambios (<code>commit</code>), subir cambios (<code>push</code>)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource git number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a></a>git add .</span>
+<span id="cb18-2"><a></a>git commit -m "cambios en el blog"</span>
+<span id="cb18-3"><a></a>git push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Trabajar → Registrar cambios → Guardar versión → Subir a GitHub</strong></p>
+<p><br> <br> <br></p>
 <ul>
 <li><a href="https://happygitwithr.com">Tutorial completo sobre usar Git en R</a></li>
 <li><a href="https://bastianolea.rbind.io/blog/tutorial_github/">Tutorial breve sobre uso de R con GitHub</a></li>
@@ -513,15 +531,15 @@
 </section>
 <section id="subir-a-github-pages" class="slide level2">
 <h2>Subir a GitHub Pages</h2>
-<p>Para que el repositorio se publique en la web con una dirección <code>github.io</code>, debemos configurarlo:</p>
+<p>Hacer que el repositorio remoto se publique como un página <code>github.io</code></p>
 <h3 id="configurar-github-pages">Configurar GitHub Pages</h3>
 <ol type="1">
-<li>En el repositorio de GitHub con tu sitio: <strong>Settings → Pages</strong></li>
+<li>En el <a href="https://github.com/SantiagoRusers/santiagoRusers.github.io">repositorio de GitHub</a> con tu sitio: <strong>Settings → Pages</strong></li>
 <li>Selecciona la rama y carpeta <code>docs</code></li>
-<li>Esperar a que se suba! 🤞🏼</li>
+<li>Esperar a que se suba!</li>
 <li>Edita la barra lateral del repo para poner el enlace</li>
 </ol>
-<p>Cada vez que subas un <em>commit</em> al repositorio, el sitio se actualizará solito después de unos minutos!</p>
+<p>Cada vez que hagas <em>push</em> a un <em>commit</em>, el sitio se actualizará solito en unos minutos!</p>
 <p><a href="https://quarto.org/docs/publishing/github-pages.html">Tutorial de GitHub Pages</a></p>
 </section>
 <section id="junta" class="slide level2 destacado">

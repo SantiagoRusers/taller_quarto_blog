@@ -135,11 +135,125 @@ Un documento Quarto `.qmd` puede pasar a ser un PDF, Word, HTML, parte de un sit
 
 ## Crear el blog
 
-En **RStudio**:
+En **RStudio:**
 
 **File → New Project → New Directory → Quarto Blog**
 
-<br>
+### Estructura del blog
+
+```
+mi-blog/
+├── _quarto.yml        # configuración
+├── index.qmd          # página principal
+├── about.qmd          # sobre ti
+└── posts/
+    ├── primer-post/
+    │   └── index.qmd  # contenido
+    └── segundo-post/
+        └── index.qmd  # contenido
+```
+
+Cada documento `.qmd` es una página del sitio. 
+
+---
+
+### Elementos del blog
+
+- `_quarto.yml`: archivo de configuración general
+- `index.qmd`: página principal del sitio[^1]
+- `about.qmd`: página de "sobre ti"
+- `{x}.qmd`: otras páginas para nuestro sitio web
+- `posts/`: carpeta con las publicaciones del blog
+- `custom.scss`: hoja de estilos para personalizar el blog
+
+[^1]: en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta
+
+
+---
+
+### Publicaciones
+
+Para **crear una nueva publicación**, crea un documento `index.qmd` en una carpeta dentro de `posts`:
+
+```
+posts/mi_primer_post/index.qmd
+```
+
+También puedes hacerlo con `quarto::new_blog_post("Título")`
+
+Luego rellena el encabezado (`yaml`) de la publicación:
+
+```yaml
+---
+title: "Mi primer análisis en R"
+subtitle: "Serie de análisis de datos"
+author: "Tu nombre"
+date: "2026-07-29"
+categories: [R, análisis, datos]
+image: "imagen.jpeg"
+---
+```
+
+---
+
+El contenido del blog se escribe con **Markdown**, con **HTML**, y con bloques de **código R**.
+
+#### Markdown
+
+**Markdown** es una sintaxis de marcado simple para dar estilo a textos a partir de texto plano. Se agregan símbolos en el texto, y al renderizarlo, se convertirá en texto HTML enriquecido.
+
+```markdown
+## Subtítulos
+### Subsubtítulos
+**negrita**
+*itálica* o _itálica_
+<u>subrayado</u>
+~~tachado~~
+`código`
+[Enlaces](http://www.enlace.cl)
+Agregar una nota al pie[^1].
+[^1]: Esta es una nota al pie
+```
+
+---
+
+#### Bloques de código
+
+Para agregar elementos hechos con código a tu blog, como gráficos, tablas y más, crea un **bloque**:
+
+```{{r}}
+1 + 1
+```
+
+En la primera línea puedes ponerles opciones:
+
+- `#| echo: false` para que no muestre el código
+- `#| eval: false` para mostrar código pero no ejecutarlo
+- `#| warning: false` para ocultar mensajes de alerta
+- `#| error: true` para mostrar ejemplos de errores
+- `#| fig-height: 7` alto de los gráficos
+
+
+
+---
+
+## Construir el sitio
+
+Renderizar todos los archivos para generar el sitio en la carpeta `_site` (por defecto, después la cambiaremos a `docs`)
+
+:::: {.columns}
+
+::: {.column}
+#### Terminal 
+`quarto render` 
+:::
+
+::: {.column}
+#### R
+`quarto::quarto_render()`
+:::
+::::
+
 
 ### Previsualizar
 Para previsualizar el sitio, le damos _Render_, o ejecutamos:
@@ -157,102 +271,10 @@ Para previsualizar el sitio, le damos _Render_, o ejecutamos:
 :::
 ::::
 
----
-
-## Construir el sitio
-
-Para construir el sitio: 
-
-:::: {.columns}
-
-::: {.column}
-### Terminal 
-`quarto render` 
-:::
-
-::: {.column}
-### R
-`quarto::quarto_render()`
-:::
-::::
-
-Esto hace que Quarto renderice todos los archivos para generar el sitio HTML en la carpeta `_site` (por defecto, después la cambiaremos a `docs`)
 
 ---
 
-### Elementos de un blog Quarto
-
-- `_quarto.yml`: archivo de configuración general
-- `index.qmd`: página principal del sitio[^1]
-- `about.qmd`: página de "sobre ti"
-- `{x}.qmd`: otras páginas para nuestro sitio web
-- `posts/`: carpeta con las publicaciones del blog
-- `custom.scss`: hoja de estilos para personalizar el blog
-
-[^1]: en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta
-
-
----
-
-## Estructura de un blog en Quarto
-
-```
-mi-blog/
-├── _quarto.yml        # configuración
-├── index.qmd          # página principal
-├── about.qmd          # sobre ti
-└── posts/
-    ├── primer-post/
-    │   └── index.qmd  # contenido
-    └── segundo-post/
-        └── index.qmd  # contenido
-```
-
-Cada documento `.qmd` es una página del sitio. Cada documento `.qmd` dentro de `posts` es una publicación del blog.
-
----
-
-## Publicaciones
-
-Crea un documento `index.qmd` en una carpeta dentro de `posts`, o ejecutamos `quarto::new_blog_post("Título")`
-
-Luego rellena el encabezado `yaml` de la publicación:
-
-```yaml
----
-title: "Mi primer análisis en R"
-subtitle: "Serie de análisis de datos"
-author: "Tu nombre"
-date: "2026-07-29"
-categories: [R, análisis, datos]
-image: "imagen.jpeg"
----
-```
-
-El contenido se escribe en **Markdown**, en **HTML**, y en bloques de **código R**.
-
----
-
-### Markdown
-
-Markdown es una sintaxis de marcado simple para dar estilo a textos a partir de texto plano. Se agregan símbolos en el texto, y al renderizarlo, se convertirá en texto HTML enriquecido.
-
-```markdown
-## Subtítulos
-### Subsubtítulos
-**negrita**
-*itálica* o _itálica_
-<u>subrayado</u>
-~~tachado~~
-`código`
-[Enlaces](http://www.enlace.cl)
-Agregar una nota al pie[^1].
-[^1]: Esta es una nota al pie
-```
-
----
-
-## Personalización
+## Personalización del sitio
 
 `_quarto.yml` tiene las configuraciones generales:
 
@@ -395,21 +417,22 @@ project:
 
 ### Configurar Git
 
+Instalar [un paquete de R](https://usethis.r-lib.org) que nos ayudará:
 ```r
 install.packages("usethis")
 ```
 
-Configurar cuenta y crear un _token_
+Configura tu cuenta y crea un _token_ para autenticarla (en lugar de usar contraseñas)
 ```r
 usethis::use_git_config(user.name = "bastianolea", user.email = "bastianolea@gmail.com")
 usethis::create_github_token()
 ```
-Copiar _token_ e ingresarlo:
+Copia el _token_ que te entrega, e ingrésalo:
 ```r 
 gitcreds::gitcreds_set()
 ```
 
-Confirmar situación:
+Confirmar la situación de Git en tu equipo:
 ```r
 usethis::git_sitrep()
 ```
@@ -418,27 +441,37 @@ usethis::git_sitrep()
 
 ### Crear un repositorio local
 
-Crear repositorio local:
+Crear repositorio local para poder **registrar los cambios** a tu código (`git add`) y **guardar versiones** (`git commit`):
 ```r
 usethis::use_git()
 ```
+
 ### Crear un repositorio remoto
 
-Crear repositorio remoto
+Crear repositorio remoto donde podrás **subir tus cambios** (`git push`) a GitHub y así hacerlos públicos y tenerlos respaldados.
+
 ```r
 usethis::use_github()
 ```
 
 ---
 
-#### Resumen de Git
+### Resumen de Git
 
-Registrar cambios (`add`), _commit_ cambios, subir cambios (`push`)
+Registrar cambios (`add`), _commit_ cambios (`commit`), subir cambios (`push`)
+
 ```git
 git add .
 git commit -m "cambios en el blog"
 git push
 ```
+
+**Trabajar → Registrar cambios → Guardar versión → Subir a GitHub**
+
+<br>
+<br>
+<br>
+
 
 - [Tutorial completo sobre usar Git en R](https://happygitwithr.com)
 - [Tutorial breve sobre uso de R con GitHub](https://bastianolea.rbind.io/blog/tutorial_github/)
@@ -448,16 +481,16 @@ git push
 
 ## Subir a GitHub Pages
 
-Para que el repositorio se publique en la web con una dirección `github.io`, debemos configurarlo:
+Hacer que el repositorio remoto se publique como un página `github.io`
 
 ### Configurar GitHub Pages
 
-1. En el repositorio de GitHub con tu sitio: **Settings → Pages**
+1. En el [repositorio de GitHub](https://github.com/SantiagoRusers/santiagoRusers.github.io) con tu sitio: **Settings → Pages**
 2. Selecciona la rama y carpeta `docs`
-3. Esperar a que se suba! 🤞🏼
+3. Esperar a que se suba!
 4. Edita la barra lateral del repo para poner el enlace
 
-Cada vez que subas un _commit_ al repositorio, el sitio se actualizará solito después de unos minutos!
+Cada vez que hagas _push_ a un _commit_, el sitio se actualizará solito en unos minutos!
 
 [Tutorial de GitHub Pages](https://quarto.org/docs/publishing/github-pages.html)
 
