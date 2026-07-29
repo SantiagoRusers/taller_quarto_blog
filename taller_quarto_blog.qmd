@@ -8,7 +8,7 @@ title-slide-attributes:
   data-background-repeat: no-repeat
 format:
   revealjs:
-    theme: [default, custom.scss]
+    theme: [default, tema.scss]
     transition: slide
     highlight-style: "github-dark"
     footer: "Grupo de usuari@s de R, Santiago de Chile"
@@ -160,11 +160,12 @@ Cada documento `.qmd` es una página del sitio.
 ### Elementos del blog
 
 - `_quarto.yml`: archivo de configuración general
-- `index.qmd`: página principal del sitio[^1]
 - `about.qmd`: página de "sobre ti"
-- `{x}.qmd`: otras páginas para nuestro sitio web
+- `index.qmd`: página principal del sitio[^1]
 - `posts/`: carpeta con las publicaciones del blog
-- `custom.scss`: hoja de estilos para personalizar el blog
+- `profile.jpg`: tu foto!
+- `{x}.qmd`: otras páginas para nuestro sitio web
+- `styles.css`: hoja de estilos para personalizar el blog
 
 [^1]: en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta
 
@@ -233,7 +234,7 @@ En la primera línea puedes ponerles opciones:
 - `#| error: true` para mostrar ejemplos de errores
 - `#| fig-height: 7` alto de los gráficos
 
-
+También puedes escribir **código en el texto* así: ``{r} 2 + 2`` y aparecerá sólo el resultado!
 
 ---
 
@@ -285,8 +286,8 @@ Para previsualizar el sitio, le damos _Render_, o ejecutamos:
 format:
   html:
     theme:
-      - minty
-      - tema.scss
+      - minty # tema base
+      - tema.scss # personalización
 ```
 Ver lista de [temas](https://bootswatch.com)
 ::: 
@@ -324,18 +325,16 @@ Luego, en el CSS:
 #### Importar
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 ```
 
 #### Aplicar
 
 ```css
-h1, h2, h3, h4, h5 {
-  font-family: "Libre Baskerville", serif;
-}
+$font-family-sans-serif: "Raleway", sans-serif;
 
-body {
-   font-family: "Work Sans", sans-serif;
+h1, h2, h3, h4, h5 {
+  font-family: "Raleway", sans-serif;
 }
 ```
 
@@ -368,26 +367,37 @@ Para más información sobre crear y personalizar tus sitios web, revisa estos t
 
 ## Publicar el sitio
 
-1. Configurar el sitio web
-2. Configurar Git
-3. Crear un repositorio local
-4. Crea un repositorio en GitHub
-5. Subir el proyecto a GitHub
-3. Configurar GitHub Pages
+Pasos siguientes:
+
+1. **Configurar** el sitio web
+2. Configurar **Git**
+3. Crear un repositorio **local**
+4. Crea un repositorio en **GitHub**
+5. **Subir** el proyecto a GitHub
+3. Configurar **GitHub Pages**
 
 ---
 
 ### Configurar el sitio web
 
+Para que funcione bien con GitHub Pages, hay que cambiar lo siquiente:
 
-`_quarto.yml`
+:::: {.columns}
+::: {.column}
+Para construir el sitio en una **carpeta** compatible con GitHub Pages, cambiar en `_quarto.yml`:
+
 ```yaml
 project:
-  type: website
-  output-dir: docs
+type: website
+output-dir: docs # cambiar carpeta donde se construye el sitio
 ```
+Luego puedes borrar la carpeta `_site`
+:::
 
-`.nojekyll`
+::: {.column}
+Agregar un **archivo vacío** llamado `.nojekyll` al proyecto, para que GitHub Pages no intente cambiarle cosas por su propia cuenta.
+:::
+::::
 
 ---
 

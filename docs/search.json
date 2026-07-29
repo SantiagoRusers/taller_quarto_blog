@@ -60,14 +60,14 @@
     "href": "taller_quarto_blog.html#personalización-del-sitio",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Personalización del sitio",
-    "text": "Personalización del sitio\n_quarto.yml tiene las configuraciones generales:\n\n\nTema\nformat:\n  html:\n    theme:\n      - minty\n      - tema.scss\nVer lista de temas\n\nMenús\nwebsite:\n  ...\n  navbar:\n    left: \n      - blog.qmd\n    right:\n\nDescripción\nwebsite:\n  title: \"Blogcito\"\n  description: \"Muy lindo\""
+    "text": "Personalización del sitio\n_quarto.yml tiene las configuraciones generales:\n\n\nTema\nformat:\n  html:\n    theme:\n      - minty # tema base\n      - tema.scss # personalización\nVer lista de temas\n\nMenús\nwebsite:\n  ...\n  navbar:\n    left: \n      - blog.qmd\n    right:\n\nDescripción\nwebsite:\n  title: \"Blogcito\"\n  description: \"Muy lindo\""
   },
   {
     "objectID": "taller_quarto_blog.html#publicar-el-sitio",
     "href": "taller_quarto_blog.html#publicar-el-sitio",
     "title": "Crea tu propia página web con Quarto y R",
     "section": "Publicar el sitio",
-    "text": "Publicar el sitio\n\nConfigurar el sitio web\nConfigurar Git\nCrear un repositorio local\nCrea un repositorio en GitHub\nSubir el proyecto a GitHub\nConfigurar GitHub Pages"
+    "text": "Publicar el sitio\nPasos siguientes:\n\nConfigurar el sitio web\nConfigurar Git\nCrear un repositorio local\nCrea un repositorio en GitHub\nSubir el proyecto a GitHub\nConfigurar GitHub Pages"
   },
   {
     "objectID": "taller_quarto_blog.html#subir-a-github-pages",

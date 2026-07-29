@@ -97,7 +97,7 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-371df682d38209f4d771940fc4ee3bed.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-b7a16d52a4730157c3b2f53948608b03.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -313,11 +313,12 @@
 <h3 id="elementos-del-blog">Elementos del blog</h3>
 <ul>
 <li><code>_quarto.yml</code>: archivo de configuración general</li>
-<li><code>index.qmd</code>: página principal del sitio<sup>1</sup></li>
 <li><code>about.qmd</code>: página de “sobre ti”</li>
-<li><code>{x}.qmd</code>: otras páginas para nuestro sitio web</li>
+<li><code>index.qmd</code>: página principal del sitio<sup>1</sup></li>
 <li><code>posts/</code>: carpeta con las publicaciones del blog</li>
-<li><code>custom.scss</code>: hoja de estilos para personalizar el blog</li>
+<li><code>profile.jpg</code>: tu foto!</li>
+<li><code>{x}.qmd</code>: otras páginas para nuestro sitio web</li>
+<li><code>styles.css</code>: hoja de estilos para personalizar el blog</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>en un blog, la página principal es usualmente la lista de publicaciones, pero puede ser una distinta</p></li></ol></aside></section>
 <section class="slide level2">
@@ -367,6 +368,7 @@
 <li><code>#| error: true</code> para mostrar ejemplos de errores</li>
 <li><code>#| fig-height: 7</code> alto de los gráficos</li>
 </ul>
+<p>También puedes escribir **código en el texto* así: <code>{r} 2 + 2</code> y aparecerá sólo el resultado!</p>
 </section>
 <section id="construir-el-sitio" class="slide level2">
 <h2>Construir el sitio</h2>
@@ -399,8 +401,8 @@
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb6-2"><a></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb6-3"><a></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb6-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> minty</span></span>
-<span id="cb6-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> tema.scss</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-4"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> minty</span><span class="co"> # tema base</span></span>
+<span id="cb6-5"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> tema.scss</span><span class="co"> # personalización</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ver lista de <a href="https://bootswatch.com">temas</a></p>
 </div><div class="column">
 <h4 id="menús"><a href="https://quarto.org/docs/websites/website-navigation.html#overview">Menús</a></h4>
@@ -424,15 +426,13 @@
 <p><strong>Get font → Get embed font → <span class="citation" data-cites="import">@import</span></strong></p>
 <p>Luego, en el CSS:</p>
 <h4 id="importar">Importar</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap'</span><span class="fu">)</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h4 id="aplicar">Aplicar</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5 {</span>
-<span id="cb10-2"><a></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Libre Baskerville"</span><span class="op">,</span> <span class="dv">serif</span><span class="op">;</span></span>
-<span id="cb10-3"><a></a>}</span>
-<span id="cb10-4"><a></a></span>
-<span id="cb10-5"><a></a>body {</span>
-<span id="cb10-6"><a></a>   <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Work Sans"</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb10-7"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a></a>$font-family-sans-serif<span class="in">:</span> "Raleway"<span class="op">,</span> sans-serif;</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5 {</span>
+<span id="cb10-4"><a></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Raleway"</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb10-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -458,23 +458,30 @@
 </section>
 <section id="publicar-el-sitio" class="slide level2">
 <h2>Publicar el sitio</h2>
+<p>Pasos siguientes:</p>
 <ol type="1">
-<li>Configurar el sitio web</li>
-<li>Configurar Git</li>
-<li>Crear un repositorio local</li>
-<li>Crea un repositorio en GitHub</li>
-<li>Subir el proyecto a GitHub</li>
-<li>Configurar GitHub Pages</li>
+<li><strong>Configurar</strong> el sitio web</li>
+<li>Configurar <strong>Git</strong></li>
+<li>Crear un repositorio <strong>local</strong></li>
+<li>Crea un repositorio en <strong>GitHub</strong></li>
+<li><strong>Subir</strong> el proyecto a GitHub</li>
+<li>Configurar <strong>GitHub Pages</strong></li>
 </ol>
 </section>
 <section class="slide level2">
 
 <h3 id="configurar-el-sitio-web">Configurar el sitio web</h3>
-<p><code>_quarto.yml</code></p>
+<p>Para que funcione bien con GitHub Pages, hay que cambiar lo siquiente:</p>
+<div class="columns">
+<div class="column">
+<p>Para construir el sitio en una <strong>carpeta</strong> compatible con GitHub Pages, cambiar en <code>_quarto.yml</code>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb11-2"><a></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb11-3"><a></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>.nojekyll</code></p>
+<span id="cb11-2"><a></a><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb11-3"><a></a><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span><span class="co"> # cambiar carpeta donde se construye el sitio</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Luego puedes borrar la carpeta <code>_site</code></p>
+</div><div class="column">
+<p>Agregar un <strong>archivo vacío</strong> llamado <code>.nojekyll</code> al proyecto, para que GitHub Pages no intente cambiarle cosas por su propia cuenta.</p>
+</div></div>
 </section>
 <section class="slide level2">
 
