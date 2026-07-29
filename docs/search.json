@@ -77,10 +77,10 @@
     "text": "Subir a GitHub Pages\nHacer que el repositorio remoto se publique como un página github.io\nConfigurar GitHub Pages\n\nEn el repositorio de GitHub con tu sitio: Settings → Pages\nSelecciona la rama y carpeta docs\nEsperar a que se suba!\nEdita la barra lateral del repo para poner el enlace\n\nCada vez que hagas push a un commit, el sitio se actualizará solito en unos minutos!\nTutorial de GitHub Pages"
   },
   {
-    "objectID": "taller_quarto_blog.html#junta",
-    "href": "taller_quarto_blog.html#junta",
+    "objectID": "taller_quarto_blog.html#listo",
+    "href": "taller_quarto_blog.html#listo",
     "title": "Crea tu propia página web con Quarto y R",
-    "section": "Junta",
-    "text": "Junta\n\nMuestra tus proyectos con R: gráficos, datos, modelos, mapas, apps!\nConoce lo que están haciendo otros miembros de la comunidad\nComparte, pregunta, conecta\n\n\nGrupo de usuari@s de R: Santiago de Chile santiagorusers.github.io"
+    "section": "Listo!",
+    "text": "Listo!\nTu sitio estará disponible en https://{usuarix}.github.io/{nombredelrepo} en unos minutos!\nSi quieres que tu sitio esté directamente en https://{usuarix}.github.io tienes que cambiar el nombre del repositorio a {usuarix}.github.io!\n\n\nSi te resultó, comparte tu sitio en el chat!\n\n\nsantiagorusers.github.io"
   }
 ]

@@ -506,13 +506,18 @@ Cada vez que hagas _push_ a un _commit_, el sitio se actualizará solito en unos
 
 ---
 
-## Junta {.destacado}
+## Listo! {.destacado}
 
-- Muestra tus proyectos con R: gráficos, datos, modelos, mapas, apps!
-- Conoce lo que están haciendo otros miembros de la comunidad
-- Comparte, pregunta, conecta
+Tu sitio estará disponible en `https://{usuarix}.github.io/{nombredelrepo}` en unos minutos!
+
+Si quieres que tu sitio esté directamente en `https://{usuarix}.github.io` tienes que cambiar el nombre del repositorio a `{usuarix}.github.io`!
+
+<br>
 
 ::: {.centrar}
-**Grupo de usuari@s de R: Santiago de Chile**
+**Si te resultó, comparte tu sitio en el chat!**
+:::
+
+::: {.centrar}
 [santiagorusers.github.io](https://santiagorusers.github.io/)
 :::

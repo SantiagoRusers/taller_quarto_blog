@@ -52,9 +52,7 @@ h4 {
   margin-top: 0.8em !important;
 }
 
-.code-copy-outer-scaffold {
-  margin-bottom: .7em !important;
-}
+
 
 /*
 // listas
@@ -89,12 +87,18 @@ h4 {
   opacity: 0.5;
 }
 
-
+/* código en textos */
 code {
   color: $detalle !important;
   background-color: #4e324c !important;
 }
 
+.destacado code {
+  color: $detalle !important;
+  background-color: #B3315C !important;
+}
+
+/* bloques de código */
 .reveal pre code {
   border-radius: 4px;
   background-color: #4e324c;
@@ -106,8 +110,17 @@ code {
   border-radius: 4px;
 }
 
+.code-copy-outer-scaffold {
+  margin-bottom: .7em !important; /* espaciado después del código */
+}
+
+
 code span.co {
   color: #785a77 !important;
+}
+
+code span.in {
+  color: #916891 !important;
 }
 
 .rosa {
@@ -143,6 +156,3 @@ code span.co {
   box-sizing: border-box;
 }
 
-code span.in {
-  color: #916891 !important;
-}
